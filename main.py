@@ -15,26 +15,22 @@ dp = Dispatcher(bot, storage=MemoryStorage())
 dp.middleware.setup(LoggingMiddleware())
 
 
-class Scp(StatesGroup):
-    scp = State()
-
-
 @dp.message_handler(commands=['start'])  # Просто приветствие
 async def send_welcome(msg: types.Message):
     await msg.reply(f'Привет, меня зовут ScpArchive. Приятно познакомиться, {msg.from_user.first_name}!')
 
 
 @dp.message_handler(commands=['help'])
-async def helper(msg: types.Message):
+async def helper(msg: types.Message):  # Создание функции help
     await msg.reply('''Пока что у меня мало функций, но я уже могу кидать ссылку на статью об обьекте, если
     вы отпрвите команду /browse %название объекта%, где название объекта пишется как scp-001''')
 
 
 @dp.message_handler(commands=['browse'])  # TODO Это скорее демонстративная команда, мы не будем отправлять ссылки,
 async def browse(msg: types.Message):  # TODO а будем отправлять инфу в сообщениях, описание, картинка и тд.
-    argument = msg.get_args()
-    if argument:
-        try:
+    argument = msg.get_args()  # Аргумент, то есть название объекта
+    if argument:  # проверяем, ввели ли аргумент
+        try:  # Пытаемся найти этот объект, в противном случае пишем что не нашли
             await msg.reply(f'Вот, я искал и нашёл что вы хотели: http://scpfoundation.net/{argument}')
         except Exception:
             await msg.reply('Я всё обыскал, нигде не нашёл того, чего вы хотели')
