@@ -1,29 +1,43 @@
-import aiogram.utils.markdown as md
+import os
+from os.path import dirname, join
 from aiogram import Bot, Dispatcher, types
-from aiogram.contrib.fsm_storage.memory import MemoryStorage
-from aiogram.dispatcher import FSMContext
-from aiogram.dispatcher.filters import Text
-from aiogram.dispatcher.filters.state import State, StatesGroup
-from aiogram.types import ParseMode
 from aiogram.utils import executor
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.contrib.middlewares.logging import LoggingMiddleware
+import sqlite3
+from dotenv import load_dotenv
+from utilites import get_content
+import logging
 
-TOKEN = "5120267238:AAGm7_j0JuyOygEBvu_BUIPQGMGCrUY_3rE"
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
+TOKEN = os.environ.get('TOKEN')
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot, storage=MemoryStorage())
 dp.middleware.setup(LoggingMiddleware())
+conn = sqlite3.connect('users.db')
+logging.basicConfig(  # TODO Исправить ошибку с лишними логами
+    filename='errors.log',
+    format='%(asctime)s %(levelname)s %(name)s %(message)s',
+    level=logging.WARNING
+)
 
 
 @dp.message_handler(commands=['start'])  # Просто приветствие
 async def send_welcome(msg: types.Message):
     await msg.reply(f'Привет, меня зовут ScpArchive. Приятно познакомиться, {msg.from_user.first_name}!')
+    cur = conn.cursor()
+    if not cur.execute(f'''SELECT * FROM users WHERE userid = {msg.from_user.id}''').fetchall():
+        sql = '''INSERT INTO users(userid, name, level, number_of_requests) VALUES(?, ?, ?, ?)'''
+        data_tuple = (msg.from_user.id, msg.from_user.first_name, 0, 0)
+        cur.execute(sql, data_tuple)
+        conn.commit()
 
 
 @dp.message_handler(commands=['help'])
 async def helper(msg: types.Message):  # Создание функции help
     await msg.reply('''Пока что у меня мало функций, но я уже могу кидать ссылку на статью об обьекте, если
-    вы отпрвите команду /browse %название объекта%, где название объекта пишется как scp-001''')
+    вы отправите команду /browse *название объекта*, где название объекта пишется как 001''')
 
 
 @dp.message_handler(commands=['browse'])  # TODO Это скорее демонстративная команда, мы не будем отправлять ссылки,
@@ -31,22 +45,24 @@ async def browse(msg: types.Message):  # TODO а будем отправлять
     argument = msg.get_args()  # Аргумент, то есть название объекта
     if argument:  # проверяем, ввели ли аргумент
         try:  # Пытаемся найти этот объект, в противном случае пишем что не нашли
-            await msg.reply(f'Вот, я искал и нашёл что вы хотели: http://scpfoundation.net/{argument}')
-        except Exception:
-            await msg.reply('Я всё обыскал, нигде не нашёл того, чего вы хотели')
+            # await msg.reply(f'Вот, я искал и нашёл что вы хотели: http://scpfoundation.net/scp-{argument}')
+            info = get_content(f'http://scpfoundation.net/scp-{argument}', id='page-title') + '\n' + \
+                   get_content(f'http://scpfoundation.net/scp-{argument}')  # Создаём ответ бота
+            if len(info) > 4096:  # Если он слишком большой, то мы делим его на несколько сообщений для обхода ограничений Telegram
+                for x in range(0, len(info), 4096):
+                    await bot.send_message(msg.chat.id, info[x:x + 4096])
+            else:
+                await bot.send_message(msg.chat.id, info)
+            cur = conn.cursor()
+            cur.execute(
+                f'''UPDATE users SET number_of_requests = number_of_requests + 1 WHERE userid = {msg.from_user.id}''')
+            conn.commit()  # Прибавляем 1 к кол-ву запросов, для отслеживания прогресса уровня
+        except Exception as e:
+            logging.error(' '.join([str(msg.from_user.id), msg.from_user.username, str(e)]))
+            # print(' '.join([str(msg.from_user.id), msg.from_user.username, str(e)]))
+            await msg.reply('Я всё обыскал, нигде не нашёл того, чего вы хотели, или же я допустил ошибку.')
     else:
         await msg.reply('Я не думаю что я смогу найти нужный объект, если вы не укажете его название')
-
-    '''await msg.reply(f'Чтобы обратиться к архиву фонда, введи название обьекта согласно примеру: scp-001')
-    await Scp.scp.set()'''
-
-
-'''@dp.message_handler(state=Scp.scp, content_types=types.ContentTypes.TEXT)
-async def browsing(message: types.Message, state: FSMContext):
-    await state.update_data(name_user=message.text.lower())
-    user_data = await state.get_data()
-    await state.finish()
-    await bot.send_message(user_data)'''
 
 
 @dp.message_handler(content_types=['text'])  # Шаблон приема обычного сообщения
