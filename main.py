@@ -19,7 +19,7 @@ conn = sqlite3.connect('users.db')
 logging.basicConfig(  # TODO Исправить ошибку с лишними логами
     filename='errors.log',
     format='%(asctime)s %(levelname)s %(name)s %(message)s',
-    level=logging.WARNING
+    level=logging.FATAL
 )
 
 
