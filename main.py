@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 from utilites import get_content
 import logging
 
+# Создание бота, импорт токена из отдельного файла .env, установка логирования и соединения с БД
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 TOKEN = os.environ.get('TOKEN')
@@ -19,7 +20,7 @@ conn = sqlite3.connect('users.db')
 logging.basicConfig(  # TODO Исправить ошибку с лишними логами
     filename='errors.log',
     format='%(asctime)s %(levelname)s %(name)s %(message)s',
-    level=logging.FATAL
+    level=logging.ERROR
 )
 
 
@@ -27,9 +28,10 @@ logging.basicConfig(  # TODO Исправить ошибку с лишними �
 async def send_welcome(msg: types.Message):
     await msg.reply(f'Привет, меня зовут ScpArchive. Приятно познакомиться, {msg.from_user.first_name}!')
     cur = conn.cursor()
-    if not cur.execute(f'''SELECT * FROM users WHERE userid = {msg.from_user.id}''').fetchall():
-        sql = '''INSERT INTO users(userid, name, level, number_of_requests) VALUES(?, ?, ?, ?)'''
-        data_tuple = (msg.from_user.id, msg.from_user.first_name, 0, 0)
+    if not cur.execute(
+            f'''SELECT * FROM users WHERE userid = {msg.from_user.id}''').fetchall():  # регистрация пользователя, если он еще не занесён в БД
+        sql = '''INSERT INTO users(userid, username, name,  level, number_of_requests, number_of_bugs) VALUES(?, ?, ?, ?, ?, ?)'''
+        data_tuple = (msg.from_user.id, msg.from_user.username, msg.from_user.first_name, 0, 0, 0)
         cur.execute(sql, data_tuple)
         conn.commit()
 
@@ -57,9 +59,12 @@ async def browse(msg: types.Message):  # TODO а будем отправлять
             cur.execute(
                 f'''UPDATE users SET number_of_requests = number_of_requests + 1 WHERE userid = {msg.from_user.id}''')
             conn.commit()  # Прибавляем 1 к кол-ву запросов, для отслеживания прогресса уровня
-        except Exception as e:
+        except Exception as e:  # Запись ошибки в лог, если пользователь столкнулся с ошибкой разряда ERROR или FATAL, возможно появление логов от самого aiogram
             logging.error(' '.join([str(msg.from_user.id), msg.from_user.username, str(e)]))
-            # print(' '.join([str(msg.from_user.id), msg.from_user.username, str(e)]))
+            cur = conn.cursor()
+            cur.execute(  # Фиксирование ошибки и прикрепление ошибки к пользователю, для возможного опроса в будущем
+                f'''UPDATE users SET number_of_bugs = number_of_bugs + 1 WHERE userid = {msg.from_user.id}''')
+            conn.commit()
             await msg.reply('Я всё обыскал, нигде не нашёл того, чего вы хотели, или же я допустил ошибку.')
     else:
         await msg.reply('Я не думаю что я смогу найти нужный объект, если вы не укажете его название')

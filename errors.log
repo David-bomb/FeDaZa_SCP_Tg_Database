@@ -1,0 +1,72 @@
+2022-04-12 19:14:54,746 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('no such table: users')>
+Traceback (most recent call last):
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\main.py", line 31, in send_welcome
+    if not cur.execute(
+sqlite3.OperationalError: no such table: users
+2022-04-12 19:18:21,994 ERROR root 971934495 vardabomb 'NoneType' object has no attribute 'text'
+2022-04-12 19:19:47,805 ERROR root 971934495 vardabomb 'NoneType' object has no attribute 'text'
+2022-04-12 19:20:14,592 ERROR root 971934495 vardabomb 'NoneType' object has no attribute 'text'
+2022-04-12 19:20:14,598 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError('execute expected at least 1 argument, got 0')>
+Traceback (most recent call last):
+  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\main.py", line 51, in browse
+    info = get_content(f'http://scpfoundation.net/scp-{argument}', id='page-title') + '\n' + \
+  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\utilites.py", line 10, in get_content
+    items = soup.find('div', id=id).text.strip()
+AttributeError: 'NoneType' object has no attribute 'text'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\main.py", line 67, in browse
+    conn.execute()
+TypeError: execute expected at least 1 argument, got 0
+2022-04-12 19:20:27,419 ERROR root 971934495 vardabomb 'NoneType' object has no attribute 'text'
+2022-04-12 19:20:27,419 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-15' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError('execute expected at least 1 argument, got 0')>
+Traceback (most recent call last):
+  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\main.py", line 51, in browse
+    info = get_content(f'http://scpfoundation.net/scp-{argument}', id='page-title') + '\n' + \
+  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\utilites.py", line 10, in get_content
+    items = soup.find('div', id=id).text.strip()
+AttributeError: 'NoneType' object has no attribute 'text'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\main.py", line 67, in browse
+    conn.execute()
+TypeError: execute expected at least 1 argument, got 0
+2022-04-12 19:21:16,139 ERROR root 971934495 vardabomb 'NoneType' object has no attribute 'text'
+2022-04-12 19:25:22,348 ERROR root 971934495 vardabomb 'NoneType' object has no attribute 'text'
