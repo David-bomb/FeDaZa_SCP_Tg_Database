@@ -17,7 +17,7 @@ bot = Bot(token=TOKEN)
 dp = Dispatcher(bot, storage=MemoryStorage())
 dp.middleware.setup(LoggingMiddleware())
 conn = sqlite3.connect('users.db')
-logging.basicConfig(  # TODO Исправить ошибку с лишними логами
+logging.basicConfig(
     filename='errors.log',
     format='%(asctime)s %(levelname)s %(name)s %(message)s',
     level=logging.ERROR
@@ -47,7 +47,6 @@ async def browse(msg: types.Message):  # TODO а будем отправлять
     argument = msg.get_args()  # Аргумент, то есть название объекта
     if argument:  # проверяем, ввели ли аргумент
         try:  # Пытаемся найти этот объект, в противном случае пишем что не нашли
-            # await msg.reply(f'Вот, я искал и нашёл что вы хотели: http://scpfoundation.net/scp-{argument}')
             info = get_content(f'http://scpfoundation.net/scp-{argument}', id='page-title') + '\n' + \
                    get_content(f'http://scpfoundation.net/scp-{argument}')  # Создаём ответ бота
             if len(info) > 4096:  # Если он слишком большой, то мы делим его на несколько сообщений для обхода ограничений Telegram
