@@ -63,7 +63,8 @@ async def browse(msg: types.Message):  # TODO а будем отправлять
                                      BeautifulSoup(text, 'html.parser').find(class_="rimg").find(class_="image").get(
                                          'src'))
             except:
-                await bot.send_photo(msg.chat.id, "https://upload.wikimedia.org/wikipedia/commons/9/9a/Нет_фото.png")
+                photo = open('files/not_found.jpg', 'rb')
+                await bot.send_photo(msg.chat.id, photo)
             if len(
                     info) > 4096:  # Если он слишком большой, то мы делим его на несколько сообщений для обхода ограничений Telegram
                 for x in range(0, len(info), 4096):
