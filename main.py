@@ -8,6 +8,9 @@ import sqlite3
 from dotenv import load_dotenv
 from utilites import get_content
 import logging
+import requests
+from bs4 import BeautifulSoup
+from datetime import datetime
 
 # Создание бота, импорт токена из отдельного файла .env, установка логирования и соединения с БД
 dotenv_path = join(dirname(__file__), '.env')
@@ -28,10 +31,11 @@ logging.basicConfig(
 async def send_welcome(msg: types.Message):
     await msg.reply(f'Привет, меня зовут ScpArchive. Приятно познакомиться, {msg.from_user.first_name}!')
     cur = conn.cursor()
+    date_time_str = datetime.now()
     if not cur.execute(
             f'''SELECT * FROM users WHERE userid = {msg.from_user.id}''').fetchall():  # регистрация пользователя, если он еще не занесён в БД
-        sql = '''INSERT INTO users(userid, username, name,  level, number_of_requests, number_of_bugs) VALUES(?, ?, ?, ?, ?, ?)'''
-        data_tuple = (msg.from_user.id, msg.from_user.username, msg.from_user.first_name, 0, 0, 0)
+        sql = '''INSERT INTO users(userid, username, name,  level, number_of_requests, number_of_bugs, date_of_registration) VALUES(?, ?, ?, ?, ?, ?, ?)'''
+        data_tuple = (msg.from_user.id, msg.from_user.username, msg.from_user.first_name, 0, 0, 0, date_time_str.replace(microsecond=0))
         cur.execute(sql, data_tuple)
         conn.commit()
 
@@ -42,6 +46,10 @@ async def helper(msg: types.Message):  # Создание функции help
     вы отправите команду /browse *название объекта*, где название объекта пишется как 001''')
 
 
+#@dp.message_handler(commands=['profile'])
+#async def browse(msg: types.Message):  # создание функции профиля
+
+
 @dp.message_handler(commands=['browse'])  # TODO Это скорее демонстративная команда, мы не будем отправлять ссылки,
 async def browse(msg: types.Message):  # TODO а будем отправлять инфу в сообщениях, описание, картинка и тд.
     argument = msg.get_args()  # Аргумент, то есть название объекта
@@ -49,7 +57,15 @@ async def browse(msg: types.Message):  # TODO а будем отправлять
         try:  # Пытаемся найти этот объект, в противном случае пишем что не нашли
             info = get_content(f'http://scpfoundation.net/scp-{argument}', id='page-title') + '\n' + \
                    get_content(f'http://scpfoundation.net/scp-{argument}')  # Создаём ответ бота
-            if len(info) > 4096:  # Если он слишком большой, то мы делим его на несколько сообщений для обхода ограничений Telegram
+            text = requests.get(f'http://scpfoundation.net/scp-{argument}').text
+            try:
+                await bot.send_photo(msg.chat.id,
+                                     BeautifulSoup(text, 'html.parser').find(class_="rimg").find(class_="image").get(
+                                         'src'))
+            except:
+                await bot.send_photo(msg.chat.id, "https://upload.wikimedia.org/wikipedia/commons/9/9a/Нет_фото.png")
+            if len(
+                    info) > 4096:  # Если он слишком большой, то мы делим его на несколько сообщений для обхода ограничений Telegram
                 for x in range(0, len(info), 4096):
                     await bot.send_message(msg.chat.id, info[x:x + 4096])
             else:
