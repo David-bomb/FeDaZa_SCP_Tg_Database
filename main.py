@@ -35,19 +35,19 @@ async def send_welcome(msg: types.Message):
     if not cur.execute(
             f'''SELECT * FROM users WHERE userid = {msg.from_user.id}''').fetchall():  # регистрация пользователя, если он еще не занесён в БД
         sql = '''INSERT INTO users(userid, username, name,  level, number_of_requests, number_of_bugs, date_of_registration) VALUES(?, ?, ?, ?, ?, ?, ?)'''
-        data_tuple = (msg.from_user.id, msg.from_user.username, msg.from_user.first_name, 0, 0, 0, date_time_str.replace(microsecond=0))
+        data_tuple = (msg.from_user.id, msg.from_user.username, msg.from_user.first_name, 0, 0, 0,
+                      date_time_str.replace(microsecond=0))
         cur.execute(sql, data_tuple)
         conn.commit()
 
 
 @dp.message_handler(commands=['help'])
 async def helper(msg: types.Message):  # Создание функции help
-    await msg.reply('''Пока что у меня мало функций, но я уже могу кидать ссылку на статью об обьекте, если
-    вы отправите команду /browse *название объекта*, где название объекта пишется как 001''')
+    await msg.reply('''Содержание /help находится в разработке.''')
 
 
-#@dp.message_handler(commands=['profile'])
-#async def browse(msg: types.Message):  # создание функции профиля
+# @dp.message_handler(commands=['profile'])
+# async def browse(msg: types.Message):  # создание функции профиля
 
 
 @dp.message_handler(commands=['browse'])  # TODO Это скорее демонстративная команда, мы не будем отправлять ссылки,
@@ -86,12 +86,9 @@ async def browse(msg: types.Message):  # TODO а будем отправлять
         await msg.reply('Я не думаю что я смогу найти нужный объект, если вы не укажете его название')
 
 
-@dp.message_handler(content_types=['text'])  # Шаблон приема обычного сообщения
+@dp.message_handler(content_types=[types.ContentType.ANY])  # Шаблон приема обычного сообщения
 async def get_text_messages(msg: types.Message):
-    if msg.text.lower() == 'привет' or msg.text.lower() == 'здравствуй' or msg.text.lower() == 'приветствую':
-        await msg.answer(f'Привет, {msg.from_user.first_name}')
-    else:
-        await msg.answer('Не понимаю, что это значит.')
+    await msg.reply(f'{msg.from_user.first_name}, архив не может обработать данный тип информации, используйте команды.')
 
 
 if __name__ == '__main__':
