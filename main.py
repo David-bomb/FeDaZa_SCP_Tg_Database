@@ -11,6 +11,7 @@ import logging
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
+import emoji
 
 # Создание бота, импорт токена из отдельного файла .env, установка логирования и соединения с БД
 dotenv_path = join(dirname(__file__), '.env')
@@ -33,28 +34,51 @@ change_photo = False
 async def send_welcome(msg: types.Message):
     global change_photo
     change_photo = False
-    await msg.reply(f'Привет, меня зовут ScpArchive. Приятно познакомиться, {msg.from_user.first_name}!')
+
+    await msg.reply(f'Hello, my name is ScpArchive. Nice to meet you, {msg.from_user.first_name}!')
     cur = conn.cursor()
     date_time_str = datetime.now()
     if not cur.execute(
             f'''SELECT * FROM users WHERE userid = {msg.from_user.id}''').fetchall():  # регистрация пользователя, если он еще не занесён в БД
         sql = '''INSERT INTO users(userid, username, name,  level, number_of_requests, number_of_bugs, date_of_registration, 
-        photo, nickname) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)'''
+        photo, nickname, language) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'''
         data_tuple = (msg.from_user.id, msg.from_user.username, msg.from_user.first_name, 1, 0, 0,
                       date_time_str.replace(microsecond=0),
                       'AgACAgIAAxkBAAIDd2JcUPUnu4OrqO59i9-M4FSRz3CmAALauDEbwQLoSo_J1EadLNMAAQEAAwIAA3MAAyQE',
-                      msg.from_user.username)
+                      msg.from_user.username, 'EN')
         cur.execute(sql, data_tuple)
         conn.commit()
 
 
 @dp.message_handler(commands=['help'])
 async def helper(msg: types.Message):  # Создание функции help
+    cur = conn.cursor()
+    language = cur.execute(f'''SELECT language FROM users WHERE userid = {msg.from_user.id}''').fetchall()[0][0]
+    language_text = {
+        'RU': 'Здесь вы можете найти полный архив SCP Foundation\n \n \n/browse *номер объекта* - для поиска статьи об объекте \n'
+        '/profile - для просмотра профиля \n/change_language *language* - изменить язык (доступные языки RU, EN)\nПо всем вопросам обращайтесь @vardabomb',
+        'EN': 'Here you can find the full SCP Foundation archive\n \n \n/browse *object number* - to search for an article about the object \n'
+              '/profile - to view the profile \n/change_language *language* - to change the language (available languages RU, EN)\n \n'
+              'Any questions contact @vardabomb'
+    }
     global change_photo
     change_photo = False
-    await msg.reply(
-        'Здесь вы можете найти полный архив SCP Foundation\n \n \n/browse *номер объекта* - для поиска статьи об объекте введите \n'
-        '/profile - для просмотра профиля введите \n \nПо всем вопросам обращайтесь @vardabomb')
+    await msg.reply(language_text[language])
+
+
+@dp.message_handler(commands=['change_language'])
+async def helper(msg: types.Message):
+    argument = msg.get_args()
+    if argument in ('RU', 'EN'):
+        cur = conn.cursor()
+        cur.execute(f"""UPDATE users SET language = '{argument}' WHERE userid = {msg.from_user.id}""")
+        language = cur.execute(f'''SELECT language FROM users WHERE userid = {msg.from_user.id}''').fetchall()[0][0]
+        succesfully = {
+            'RU': 'Успешно',
+            'EN': 'Successfully'
+        }
+        conn.commit()
+        await msg.answer(text=succesfully[language] + emoji.emojize(":thumbs_up:"))
 
 
 @dp.message_handler(commands=['profile'])
@@ -64,18 +88,31 @@ async def profile(msg: types.Message):  # создание функции про
     cur = conn.cursor()
     profile = cur.execute(f'''SELECT * FROM users WHERE userid = {msg.from_user.id}''').fetchall()
     conn.commit()
-    await bot.send_photo(msg.chat.id, str(profile[0][7]))  # Вывод фото профиля и его статистики
-    await bot.send_message(msg.chat.id,
-                           f'Имя: {profile[0][8]}.\nДата регистрации: {profile[0][6]}.\nКоличество запросов: {profile[0][4]}.\n'
+    cur = conn.cursor()
+    language = cur.execute(f'''SELECT language FROM users WHERE userid = {msg.from_user.id}''').fetchall()[0][0]
+    language_text = {
+        'RU': f'Имя: {profile[0][8]}.\nДата регистрации: {profile[0][6]}.\nКоличество запросов: {profile[0][4]}.\n'
                            f'Уровень {profile[0][3]}.\n \nЧтобы повысить уровень делайте больше запросов\n \nВозможности:\n'
-                           f'/edit_nickname - изменить имя.\n/edit_photo - изменить фотографию')
+                           f'/edit_nickname - изменить имя.\n/edit_photo - изменить фотографию',
+        'EN': f'Name: {profile[0][8]}.\nRegistration Date: {profile[0][6]}.\nNumber of requests: {profile[0][4]}.\n'
+                           f'Level {profile[0][3]}.\n \nMake more requests to level up\n \nFeatures:\n'
+                           f'/edit_nickname *new nickname* - to change name.\n/edit_photo - to change photo'
+    }
+    await bot.send_photo(msg.chat.id, str(profile[0][7]))  # Вывод фото профиля и его статистики
+    await bot.send_message(msg.chat.id, language_text[language])
 
 
 @dp.message_handler(commands=['edit_photo'])
 async def edit_photo(msg: types.Message):  # Функция смены фото профиля в БД бота
     global change_photo
     change_photo = True
-    await bot.send_message(msg.chat.id, "Пришлите новую фотографию:")
+    cur = conn.cursor()
+    language = cur.execute(f'''SELECT language FROM users WHERE userid = {msg.from_user.id}''').fetchall()[0][0]
+    language_text = {
+        'RU': 'Пришлите новую фотографию:',
+        'EN': 'Submit a new photo:'
+    }
+    await bot.send_message(msg.chat.id, language_text[language])
 
 
 @dp.message_handler(commands=['edit_nickname'])
@@ -85,8 +122,16 @@ async def edit_nickname(msg: types.Message):  # Смена никнейма в �
     argument = msg.get_args()
     if argument:
         cur = conn.cursor()
+        argument = msg.get_args()
+        language = cur.execute(f'''SELECT language FROM users WHERE userid = {msg.from_user.id}''').fetchall()[0][0]
+        succesfully = {
+            'RU': 'Успешно',
+            'EN': 'Successfully'
+        }
         cur.execute(f"""UPDATE users SET nickname = '{argument}' WHERE userid = {msg.from_user.id}""")
         conn.commit()
+        await msg.answer(text=succesfully[language] + emoji.emojize(":thumbs_up:"))
+
 
 
 @dp.message_handler(content_types=[types.ContentType.PHOTO])
@@ -96,29 +141,51 @@ async def edit_photo(msg: types.Message):  # Функция получения �
         document_id = msg.photo[0].file_id
         file_info = await bot.get_file(document_id)
         cur = conn.cursor()
+        language = cur.execute(f'''SELECT language FROM users WHERE userid = {msg.from_user.id}''').fetchall()[0][0]
+        succesfully = {
+            'RU': 'Успешно',
+            'EN': 'Successfully'
+        }
         cur.execute(f"""UPDATE users SET photo = '{file_info.file_id}' WHERE userid = {msg.from_user.id}""") # Добавление фото в БД
         conn.commit()
         change_photo = False
+        await msg.answer(text=succesfully[language] + emoji.emojize(":thumbs_up:"))
     else:
-        await bot.send_message(msg.chat.id, "Красивая фотография, но что вы хотите?")
+        cur = conn.cursor()
+        language = cur.execute(f'''SELECT language FROM users WHERE userid = {msg.from_user.id}''').fetchall()[0][0]
+        language_text = {
+            'RU': 'Красивая фотография, но что вы хотите?',
+            'EN': 'Very nice photo, but what do you want?'
+        }
+        await bot.send_message(msg.chat.id, language_text[language])
 
 
 @dp.message_handler(commands=['browse'])  # Функция запроса scp объекта, основная функция бота
 async def browse(msg: types.Message):
     global change_photo
     change_photo = False
+    cur = conn.cursor()
+    language = cur.execute(f'''SELECT language FROM users WHERE userid = {msg.from_user.id}''').fetchall()[0][0]
     argument = msg.get_args()  # Аргумент, то есть название объекта
     if len(argument) < 3:
         argument = '0' * (3 - len(argument)) + argument
     if argument:  # проверяем, ввели ли аргумент
         try:  # Пытаемся найти этот объект, в противном случае пишем что не нашли
-            info = get_content(f'http://scp-ru.wikidot.com/scp-{argument}', id='page-title') + '\n' + \
-                   get_content(f'http://scp-ru.wikidot.com/scp-{argument}')  # Создаём ответ бота
-            text = requests.get(f'http://scp-ru.wikidot.com/scp-{argument}').text
+            language_text = {
+                'RU': f'http://scp-ru.wikidot.com/scp-{argument}',
+                'EN': f'https://scp-wiki.wikidot.com/scp-{argument}'
+            }
+            info = get_content(language_text[language], id='page-title') + '\n' + \
+                   get_content(language_text[language])  # Создаём ответ бота
+            text = requests.get(language_text[language]).text
             try:
-                await bot.send_photo(msg.chat.id,
+                if language == 'RU':
+                    await bot.send_photo(msg.chat.id,
                                      BeautifulSoup(text, 'html.parser').find(class_="rimg").find(class_="image").get(
                                          'src'))
+                elif language == 'EN':
+                    await bot.send_photo(msg.chat.id,
+                                         BeautifulSoup(text, 'html.parser').find(class_="scp-image-block block-right").find(class_="image").get('src'))
             except:
                 await bot.send_photo(msg.chat.id,
                                      'AgACAgIAAxkBAAIDd2JcUPUnu4OrqO59i9-M4FSRz3CmAALauDEbwQLoSo_J1EadLNMAAQEAAwIAA3MAAyQE')
@@ -162,17 +229,30 @@ async def browse(msg: types.Message):
             cur.execute(  # Фиксирование ошибки и прикрепление ошибки к пользователю, для возможного опроса в будущем
                 f'''UPDATE users SET number_of_bugs = number_of_bugs + 1 WHERE userid = {msg.from_user.id}''')
             conn.commit()
-            await msg.reply('Я всё обыскал, нигде не нашёл того, чего вы хотели, или же я допустил ошибку.')
+            language_error = {
+                'RU': 'Я всё обыскал, нигде не нашёл того, чего вы хотели, или же я допустил ошибку.',
+                'EN': '''I searched everywhere, didn't find what you wanted anywhere, or I made a mistake.'''
+            }
+            await msg.reply(language_error[language])
     else:
-        await msg.reply('Я не думаю что я смогу найти нужный объект, если вы не укажете его название')
+        language_error1 = {
+            'RU': 'Я всё обыскал, нигде не нашёл того, чего вы хотели, или же я допустил ошибку.',
+            'EN': '''I searched everywhere, didn't find what you wanted anywhere, or I made a mistake.'''
+        }
+        await msg.reply(language_error1[language])
 
 
 @dp.message_handler(content_types=[types.ContentType.ANY])  # Шаблон приема обычного сообщения
 async def get_text_messages(msg: types.Message):
     global change_photo
     change_photo = False
-    await msg.reply(
-        f'{msg.from_user.first_name}, архив не может обработать данный тип информации, используйте команды.')
+    cur = conn.cursor()
+    language = cur.execute(f'''SELECT language FROM users WHERE userid = {msg.from_user.id}''').fetchall()[0][0]
+    language_text = {
+        'RU': f'{msg.from_user.first_name}, архив не может обработать данный тип информации, используйте команды.',
+        'EN': f'{msg.from_user.first_name}, cannot archive this type of information, tag the command.'
+    }
+    await msg.reply(language_text[language])
 
 
 if __name__ == '__main__':
