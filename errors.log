@@ -1,0 +1,1233 @@
+2022-04-17 19:19:47,808 ERROR root 971934495 vardabomb 'NoneType' object has no attribute 'text'
+2022-04-17 19:23:37,624 ERROR root 971934495 vardabomb 'NoneType' object has no attribute 'text'
+2022-04-17 20:01:33,554 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=AttributeError("'coroutine' object has no attribute 'file_path'")>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 57, in handle_docs_photo
+    downloaded_file = bot.download_file(file_info.file_path)
+AttributeError: 'coroutine' object has no attribute 'file_path'
+2022-04-17 20:02:38,041 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=AttributeError("'Dispatcher' object has no attribute 'get_file'")>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 56, in handle_docs_photo
+    file_info = dp.get_file(message.photo[len(message.photo) - 1].file_id)
+AttributeError: 'Dispatcher' object has no attribute 'get_file'
+2022-04-17 20:03:54,857 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=AttributeError("'Dispatcher' object has no attribute 'reply_to'")>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 61, in handle_docs_photo
+    await dp.reply_to(message, "Пожалуй, я сохраню это")
+AttributeError: 'Dispatcher' object has no attribute 'reply_to'
+2022-04-17 20:07:44,726 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=BadRequest("Wrong remote file identifier specified: can't unserialize it. wrong last symbol")>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 62, in scan_message
+    await bot.send_photo(msg.chat.id, str(file_info.file_unique_id))
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 527, in send_photo
+    result = await self.request(api.Methods.SEND_PHOTO, payload, files)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+aiogram.utils.exceptions.BadRequest: Wrong remote file identifier specified: can't unserialize it. wrong last symbol
+2022-04-17 20:08:22,339 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=BadRequest('Wrong http url specified')>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 62, in scan_message
+    await bot.send_photo(msg.chat.id, str(file_info.file_path))
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 527, in send_photo
+    result = await self.request(api.Methods.SEND_PHOTO, payload, files)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+aiogram.utils.exceptions.BadRequest: Wrong http url specified
+2022-04-17 20:29:38,145 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-12' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=NameError("name 'cur' is not defined")>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 55, in profile
+    profile = cur.execute(f'''SELECT * FROM users WHERE userid = {msg.from_user.id}''').fetchall()
+NameError: name 'cur' is not defined
+2022-04-17 20:32:44,713 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-12' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=NameError("name 'cur' is not defined")>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 56, in profile
+    profile = cur.execute(f'''SELECT * FROM users WHERE userid = {msg.from_user.id}''').fetchall()
+NameError: name 'cur' is not defined
+2022-04-17 20:33:56,523 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('table users has no column named photo')>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 43, in send_welcome
+    cur.execute(sql, data_tuple)
+sqlite3.OperationalError: table users has no column named photo
+2022-04-17 20:35:47,716 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-12' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=NameError("name 'cur' is not defined")>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 56, in profile
+    profile = cur.execute(f'''SELECT * FROM users WHERE userid = {msg.from_user.id}''').fetchall()
+NameError: name 'cur' is not defined
+2022-04-17 20:36:10,638 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=IndexError('list index out of range')>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 59, in profile
+    await bot.send_photo(msg.chat.id, profile[7])
+IndexError: list index out of range
+2022-04-17 20:36:21,292 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=IndexError('list index out of range')>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 59, in profile
+    await bot.send_photo(msg.chat.id, profile[8])
+IndexError: list index out of range
+2022-04-17 20:36:48,502 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=IndexError('list index out of range')>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 59, in profile
+    await bot.send_photo(msg.chat.id, str(profile[7]))
+IndexError: list index out of range
+2022-04-17 20:36:49,120 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-10' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=IndexError('list index out of range')>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 59, in profile
+    await bot.send_photo(msg.chat.id, str(profile[7]))
+IndexError: list index out of range
+2022-04-17 20:36:49,554 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-13' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=IndexError('list index out of range')>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 59, in profile
+    await bot.send_photo(msg.chat.id, str(profile[7]))
+IndexError: list index out of range
+2022-04-17 20:36:49,872 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-16' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=IndexError('list index out of range')>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 59, in profile
+    await bot.send_photo(msg.chat.id, str(profile[7]))
+IndexError: list index out of range
+2022-04-17 20:36:50,143 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-19' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=IndexError('list index out of range')>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 59, in profile
+    await bot.send_photo(msg.chat.id, str(profile[7]))
+IndexError: list index out of range
+2022-04-17 20:37:16,155 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=IndexError('list index out of range')>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 60, in profile
+    await bot.send_photo(msg.chat.id, str(profile[7]))
+IndexError: list index out of range
+2022-04-17 20:37:36,522 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=BadRequest('Wrong http url specified')>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 60, in profile
+    await bot.send_photo(msg.chat.id, str(profile[0][7]))
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 527, in send_photo
+    result = await self.request(api.Methods.SEND_PHOTO, payload, files)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+aiogram.utils.exceptions.BadRequest: Wrong http url specified
+2022-04-17 20:37:38,064 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-12' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=BadRequest('Wrong http url specified')>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 60, in profile
+    await bot.send_photo(msg.chat.id, str(profile[0][7]))
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 527, in send_photo
+    result = await self.request(api.Methods.SEND_PHOTO, payload, files)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+aiogram.utils.exceptions.BadRequest: Wrong http url specified
+2022-04-17 20:37:38,562 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-16' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=BadRequest('Wrong http url specified')>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 60, in profile
+    await bot.send_photo(msg.chat.id, str(profile[0][7]))
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 527, in send_photo
+    result = await self.request(api.Methods.SEND_PHOTO, payload, files)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+aiogram.utils.exceptions.BadRequest: Wrong http url specified
+2022-04-17 20:37:44,896 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=BadRequest('Wrong remote file identifier specified: wrong padding in the string')>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 60, in profile
+    await bot.send_photo(msg.chat.id, str(profile[0][8]))
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 527, in send_photo
+    result = await self.request(api.Methods.SEND_PHOTO, payload, files)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+aiogram.utils.exceptions.BadRequest: Wrong remote file identifier specified: wrong padding in the string
+2022-04-17 20:37:45,952 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-11' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=BadRequest('Wrong remote file identifier specified: wrong padding in the string')>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 60, in profile
+    await bot.send_photo(msg.chat.id, str(profile[0][8]))
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 527, in send_photo
+    result = await self.request(api.Methods.SEND_PHOTO, payload, files)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+aiogram.utils.exceptions.BadRequest: Wrong remote file identifier specified: wrong padding in the string
+2022-04-17 20:37:58,984 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=BadRequest('Wrong remote file identifier specified: wrong padding in the string')>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 60, in profile
+    await bot.send_photo(msg.chat.id, str(profile[0][8]))
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 527, in send_photo
+    result = await self.request(api.Methods.SEND_PHOTO, payload, files)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+aiogram.utils.exceptions.BadRequest: Wrong remote file identifier specified: wrong padding in the string
+2022-04-17 20:40:04,619 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=UnboundLocalError("local variable 'change_photo' referenced before assignment")>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 83, in edit_photo
+    if change_photo:
+UnboundLocalError: local variable 'change_photo' referenced before assignment
+2022-04-17 20:41:54,975 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=IndexError('list index out of range')>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 59, in profile
+    print(profile[0][7])
+IndexError: list index out of range
+2022-04-17 20:42:21,246 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-13' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=BadRequest('Wrong remote file identifier specified: wrong padding in the string')>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 61, in profile
+    await bot.send_photo(msg.chat.id, str(profile[0][8]))
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 527, in send_photo
+    result = await self.request(api.Methods.SEND_PHOTO, payload, files)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+aiogram.utils.exceptions.BadRequest: Wrong remote file identifier specified: wrong padding in the string
+2022-04-17 20:42:21,367 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-18' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=BadRequest('Wrong remote file identifier specified: wrong padding in the string')>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 61, in profile
+    await bot.send_photo(msg.chat.id, str(profile[0][8]))
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 527, in send_photo
+    result = await self.request(api.Methods.SEND_PHOTO, payload, files)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+aiogram.utils.exceptions.BadRequest: Wrong remote file identifier specified: wrong padding in the string
+2022-04-17 20:43:21,718 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=BadRequest('Wrong remote file identifier specified: wrong padding in the string')>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 61, in profile
+    await bot.send_photo(msg.chat.id, str(profile[0][8]))
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 527, in send_photo
+    result = await self.request(api.Methods.SEND_PHOTO, payload, files)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+aiogram.utils.exceptions.BadRequest: Wrong remote file identifier specified: wrong padding in the string
+2022-04-17 20:43:56,542 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-15' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('no such column: fedosik')>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 75, in edit_nickname
+    cur.execute(f'''UPDATE users SET nickname = {argument} WHERE userid = {msg.from_user.id}''')
+sqlite3.OperationalError: no such column: fedosik
+2022-04-17 20:44:26,302 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('no such column: fedosik')>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 76, in edit_nickname
+    cur.execute(f'''UPDATE users SET nickname = {argument} WHERE userid = {msg.from_user.id}''')
+sqlite3.OperationalError: no such column: fedosik
+2022-04-17 20:46:46,683 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-12' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=UnboundLocalError("local variable 'change_photo' referenced before assignment")>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 85, in edit_photo
+    if change_photo:
+UnboundLocalError: local variable 'change_photo' referenced before assignment
+2022-04-17 20:47:19,846 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-12' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=UnboundLocalError("local variable 'change_photo' referenced before assignment")>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 85, in edit_photo
+    if change_photo:
+UnboundLocalError: local variable 'change_photo' referenced before assignment
+2022-04-17 20:49:40,590 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-12' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=UnboundLocalError("local variable 'change_photo' referenced before assignment")>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 82, in edit_photo
+    print(change_photo)
+UnboundLocalError: local variable 'change_photo' referenced before assignment
+2022-04-17 20:50:51,044 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-16' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=UnboundLocalError("local variable 'change_photo' referenced before assignment")>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 82, in edit_photo
+    print(change_photo)
+UnboundLocalError: local variable 'change_photo' referenced before assignment
+2022-04-17 20:51:03,905 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-19' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=UnboundLocalError("local variable 'change_photo' referenced before assignment")>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 82, in edit_photo
+    print(change_photo)
+UnboundLocalError: local variable 'change_photo' referenced before assignment
+2022-04-17 20:51:41,017 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-12' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=UnboundLocalError("local variable 'change_photo' referenced before assignment")>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 82, in edit_photo
+    print(change_photo)
+UnboundLocalError: local variable 'change_photo' referenced before assignment
+2022-04-17 20:52:01,556 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-11' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=UnboundLocalError("local variable 'change_photo' referenced before assignment")>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 83, in edit_photo
+    if change_photo:
+UnboundLocalError: local variable 'change_photo' referenced before assignment
+2022-04-17 20:53:16,975 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-11' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=UnboundLocalError("local variable 'change_photo' referenced before assignment")>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 84, in edit_photo
+    print(change_photo)
+UnboundLocalError: local variable 'change_photo' referenced before assignment
+2022-04-17 21:06:54,802 ERROR root 855707706 kurakura222 no such column: lvl
+2022-04-17 21:08:38,234 ERROR root 855707706 kurakura222 no such column: lvl
+2022-04-17 21:09:59,622 ERROR root 855707706 kurakura222 no such column: lvl
+2022-04-17 21:10:39,354 ERROR root 855707706 kurakura222 no such column: lvl
+2022-04-17 21:11:26,886 ERROR root 855707706 kurakura222 '<' not supported between instances of 'sqlite3.Cursor' and 'int'
+2022-04-17 21:12:17,737 ERROR root 855707706 kurakura222 int() argument must be a string, a bytes-like object or a number, not 'list'
+2022-04-17 21:12:50,970 ERROR root 855707706 kurakura222 '<' not supported between instances of 'list' and 'int'
+2022-04-17 21:30:09,584 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-19' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=IndexError('list index out of range')>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 66, in profile
+    await bot.send_photo(msg.chat.id, str(profile[0][7]))
+IndexError: list index out of range
+2022-04-17 21:30:48,208 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-23' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=IndexError('list index out of range')>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 66, in profile
+    await bot.send_photo(msg.chat.id, str(profile[0][7]))
+IndexError: list index out of range
+2022-04-17 21:31:04,981 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-31' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=IndexError('list index out of range')>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 66, in profile
+    await bot.send_photo(msg.chat.id, str(profile[0][7]))
+IndexError: list index out of range
+2022-04-18 17:06:37,033 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-18 17:06:47,518 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-18 17:06:57,665 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-18 17:07:07,791 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-18 17:07:17,932 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-18 17:07:23,916 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-38' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=IndexError('list index out of range')>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 73, in profile
+    await bot.send_photo(msg.chat.id, str(profile[0][7]))  # Вывод фото профиля и его статистики
+IndexError: list index out of range
+2022-04-18 17:07:28,056 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-18 17:07:43,554 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-18 17:07:53,682 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-18 17:08:03,801 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-18 17:08:13,917 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-18 17:08:24,047 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-18 17:08:34,155 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-18 17:08:44,334 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-18 17:08:54,486 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-18 17:09:04,615 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-18 17:09:10,413 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-72' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("unhashable type: 'list'")>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 63, in helper
+    await msg.reply(language_text[language])
+TypeError: unhashable type: 'list'
+2022-04-18 17:09:14,771 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-18 17:09:24,936 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-18 17:09:37,257 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("unhashable type: 'list'")>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 63, in helper
+    await msg.reply(language_text[language])
+TypeError: unhashable type: 'list'
+2022-04-18 17:09:44,160 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-18 17:10:12,566 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("unhashable type: 'list'")>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 63, in helper
+    await msg.reply(language_text[language])
+TypeError: unhashable type: 'list'
+2022-04-18 17:10:16,084 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-18 17:10:26,227 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-18 17:10:36,384 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-18 17:10:46,514 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-18 17:11:01,253 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("unhashable type: 'list'")>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 63, in helper
+    await msg.reply(language_text[language])
+TypeError: unhashable type: 'list'
+2022-04-18 17:11:10,455 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-14' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("unhashable type: 'list'")>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 63, in helper
+    await msg.reply(language_text[language])
+TypeError: unhashable type: 'list'
+2022-04-18 17:11:39,446 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("unhashable type: 'list'")>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 64, in helper
+    await msg.reply(language_text[language])
+TypeError: unhashable type: 'list'
+2022-04-18 17:47:01,356 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-13' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=NameError("name 'message' is not defined")>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 76, in helper
+    await message.answer(text="Выберите вашу роль." + emoji.emojize(":white_check_mark:"))
+NameError: name 'message' is not defined
