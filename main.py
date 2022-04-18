@@ -52,8 +52,9 @@ async def send_welcome(msg: types.Message):
 async def helper(msg: types.Message):  # Создание функции help
     global change_photo
     change_photo = False
-    await msg.reply('Здесь вы можете найти полный архив SCP Foundation\n \n \n/browse *номер объекта* - для поиска статьи об объекте введите \n'
-                    '/profile - для просмотра профиля введите \n \nПо всем вопросам обращайтесь @vardabomb')
+    await msg.reply(
+        'Здесь вы можете найти полный архив SCP Foundation\n \n \n/browse *номер объекта* - для поиска статьи об объекте введите \n'
+        '/profile - для просмотра профиля введите \n \nПо всем вопросам обращайтесь @vardabomb')
 
 
 @dp.message_handler(commands=['profile'])
@@ -63,21 +64,22 @@ async def profile(msg: types.Message):  # создание функции про
     cur = conn.cursor()
     profile = cur.execute(f'''SELECT * FROM users WHERE userid = {msg.from_user.id}''').fetchall()
     conn.commit()
-    await bot.send_photo(msg.chat.id, str(profile[0][7]))
-    await bot.send_message(msg.chat.id, f'Имя: {profile[0][8]}.\nДата регистрации: {profile[0][6]}.\nКоличество запросов: {profile[0][4]}.\n'
-                                        f'Уровень {profile[0][3]}.\n \nЧтобы повысить уровень делайте больше запросов\n \nВозможности:\n'
-                                        f'/edit_nickname - изменить имя.\n/edit_photo - изменить фотографию')
+    await bot.send_photo(msg.chat.id, str(profile[0][7]))  # Вывод фото профиля и его статистики
+    await bot.send_message(msg.chat.id,
+                           f'Имя: {profile[0][8]}.\nДата регистрации: {profile[0][6]}.\nКоличество запросов: {profile[0][4]}.\n'
+                           f'Уровень {profile[0][3]}.\n \nЧтобы повысить уровень делайте больше запросов\n \nВозможности:\n'
+                           f'/edit_nickname - изменить имя.\n/edit_photo - изменить фотографию')
 
 
 @dp.message_handler(commands=['edit_photo'])
-async def edit_photo(msg: types.Message):
+async def edit_photo(msg: types.Message):  # Функция смены фото профиля в БД бота
     global change_photo
     change_photo = True
     await bot.send_message(msg.chat.id, "Пришлите новую фотографию:")
 
 
 @dp.message_handler(commands=['edit_nickname'])
-async def edit_nickname(msg: types.Message):
+async def edit_nickname(msg: types.Message):  # Смена никнейма в профиле, но при этом основной username сохраняется
     global change_photo
     change_photo = False
     argument = msg.get_args()
@@ -88,21 +90,21 @@ async def edit_nickname(msg: types.Message):
 
 
 @dp.message_handler(content_types=[types.ContentType.PHOTO])
-async def edit_photo(msg: types.Message):
+async def edit_photo(msg: types.Message):  # Функция получения фото
     global change_photo
     if change_photo:
         document_id = msg.photo[0].file_id
         file_info = await bot.get_file(document_id)
         cur = conn.cursor()
-        cur.execute(f"""UPDATE users SET photo = '{file_info.file_id}' WHERE userid = {msg.from_user.id}""")
+        cur.execute(f"""UPDATE users SET photo = '{file_info.file_id}' WHERE userid = {msg.from_user.id}""") # Добавление фото в БД
         conn.commit()
         change_photo = False
     else:
         await bot.send_message(msg.chat.id, "Красивая фотография, но что вы хотите?")
 
 
-@dp.message_handler(commands=['browse'])  # TODO Это скорее демонстративная команда, мы не будем отправлять ссылки,
-async def browse(msg: types.Message):  # TODO а будем отправлять инфу в сообщениях, описание, картинка и тд.
+@dp.message_handler(commands=['browse'])  # Функция запроса scp объекта, основная функция бота
+async def browse(msg: types.Message):
     global change_photo
     change_photo = False
     argument = msg.get_args()  # Аргумент, то есть название объекта
@@ -129,10 +131,12 @@ async def browse(msg: types.Message):  # TODO а будем отправлять
             cur = conn.cursor()
             cur.execute(
                 f'''UPDATE users SET number_of_requests = number_of_requests + 1 WHERE userid = {msg.from_user.id}''')
-            requests_n = cur.execute(f'''SELECT number_of_requests FROM users WHERE userid = {msg.from_user.id}''').fetchall()
+            requests_n = cur.execute(
+                f'''SELECT number_of_requests FROM users WHERE userid = {msg.from_user.id}''').fetchall()
             lvl = cur.execute(f'''SELECT level FROM users WHERE userid = {msg.from_user.id}''').fetchall()
             requests_n = int(requests_n[0][0])
             lvl = int(lvl[0][0])
+            # Перебор уровней и кол-ва запросов для установления новых уровней
             if lvl < 2 and requests_n >= 125:
                 cur.execute(
                     f"""UPDATE users SET level = '2' WHERE userid = {msg.from_user.id}""")
@@ -163,7 +167,7 @@ async def browse(msg: types.Message):  # TODO а будем отправлять
         await msg.reply('Я не думаю что я смогу найти нужный объект, если вы не укажете его название')
 
 
-@dp.message_handler(content_types=[types.ContentType.TEXT])  # Шаблон приема обычного сообщения
+@dp.message_handler(content_types=[types.ContentType.ANY])  # Шаблон приема обычного сообщения
 async def get_text_messages(msg: types.Message):
     global change_photo
     change_photo = False
