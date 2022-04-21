@@ -1,7 +1,13 @@
+from contextlib import suppress
+from random import randint
+
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.dispatcher.filters import Text
 from aiogram.utils import executor
+from aiogram.utils.callback_data import CallbackData
+from aiogram.utils.exceptions import MessageNotModified
+
 from tockennn import TOKEN
 from aiogram.types import ReplyKeyboardRemove, \
     ReplyKeyboardMarkup, KeyboardButton, \
@@ -15,6 +21,7 @@ bot = Bot(token=TOKEN)
 num_SCP = ''
 dp = Dispatcher(bot, storage=MemoryStorage())
 dp.middleware.setup(LoggingMiddleware())
+
 # Создание кнопок с надписями
 button_search = KeyboardButton('Активировать протокол поиска')
 button_name_search = KeyboardButton('Поиск SCP')
@@ -30,6 +37,15 @@ markup_menu = ReplyKeyboardMarkup(resize_keyboard=True).row(button_profile).add(
 markup_profile = ReplyKeyboardMarkup(resize_keyboard=True).row(button_menu).add(
     button_name_search)
 
+def get_keyboard():
+    # Генерация клавиатуры.
+    buttons = [
+        types.InlineKeyboardButton(text="-1", callback_data="num_decr"),
+        types.InlineKeyboardButton(text="+1", callback_data="num_incr")]
+
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
+    keyboard.add(*buttons)
+    return keyboard
 
 class States(Helper):  # Хранилище состояний
     mode = HelperMode.snake_case
@@ -37,9 +53,24 @@ class States(Helper):  # Хранилище состояний
     STATE_2 = ListItem()  # Запаска
 
 
-@dp.message_handler(commands=['t'])  # Команда тестовых вызывов
-async def process_hi2_command(message: types.Message):
-    await message.reply("Второе - прячем клавиатуру после одного нажатия", reply_markup=greet_search)
+
+@dp.callback_query_handler(Text(startswith="num_"))
+async def callbacks_num(call: types.CallbackQuery):
+    action = call.data.split("_")[1]
+    if action == "incr":
+        await call.message.answer('Чувак спереди')
+    elif action == "decr":
+        await call.message.answer('Чувак сзади')
+
+
+@dp.message_handler(commands='t')  # Команда тестовых вызывов
+async def cmd_random(message: types.Message):
+    await message.answer("Укажите число: 0", reply_markup=get_keyboard())
+
+
+
+
+
 
 
 @dp.message_handler(commands=['start'])  # Тут все и так понятно)
@@ -113,23 +144,4 @@ if __name__ == '__main__':
     executor.start_polling(dp)
     executor.start_polling(dp, on_shutdown=shutdown)
 
-"""@dp.message_handler(content_types=types.ContentType.TEXT)
-async def with_puree(message: types.Message):
-    global num_SCP
-    if message['text'].isdigit():
-        num_SCP = message['text']
-    else:
-        await message.reply("Неверный ввод, попробуйте повторить")"""
 
-"""@dp.message_handler(content_types=['text'])
-async def echo_message(msg: types.Message):
-    print(msg.text.lower())
-    if msg.text.lower() == 'мой профиль':
-        await msg.reply("Лох без профиля)")
-    elif msg.text.lower() == 'поиск scp':
-        await msg.reply("Ну давай, ищи теперь, бака")
-    elif msg.text.lower() == 'меню':
-        await msg.reply("Чел, ты и так в меню")
-    else:
-        await msg.answer('Не понимаю, что это значит.')
-"""

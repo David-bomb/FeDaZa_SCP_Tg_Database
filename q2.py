@@ -2,7 +2,7 @@ import os
 from os.path import dirname, join
 import sqlite3
 from dotenv import load_dotenv
-from utilites import get_content
+from utilites import get_content, phrasebook, get_keyboard
 import logging
 import requests
 from bs4 import BeautifulSoup
@@ -24,6 +24,7 @@ from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.contrib.middlewares.logging import LoggingMiddleware
 
 # Создание бота, импорт токена из отдельного файла .env, установка логирования и соединения с БД
+
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 TOKEN = os.environ.get('TOKEN')
@@ -38,7 +39,8 @@ logging.basicConfig(
 )
 global change_photo
 change_photo = False
-
+num_SCP = ''
+# qwe(conn, bot, logging)
 # Создание кнопок с надписями
 button_search = KeyboardButton('Активировать протокол поиска')
 button_name_search = KeyboardButton('Поиск SCP')
@@ -59,6 +61,27 @@ class States(Helper):  # TODO  ПЕРЕРАБОТАТЬ Хранилище со�
     mode = HelperMode.snake_case
     STATE_1 = ListItem()  # Уровень для ввода номера SCP объекта
     STATE_2 = ListItem()  # Запаска
+
+
+@dp.callback_query_handler(Text(startswith="btn_"), state=['state_1'])  # Обработка запросов инвайд кнопок
+async def callbacks_num(call: types.CallbackQuery):
+    global num_SCP
+    action = call.data.split("_")[1]
+    if action == "front":
+        await call.message.answer('Чувак спереди')
+        await bot.send_message(f"/browse {int(num_SCP) + 1}")
+        await call.answer()
+    elif action == 'stop':
+        print('555555555555555555')
+        state = dp.current_state(user=call.from_user.id)
+        await state.reset_state()
+        await call.message.answer(reply_markup=markup_menu)
+        num_SCP = ''
+        await call.answer()
+    elif action == "behind":
+        await call.message.answer('Чувак сзади')
+        await bot.send_message(f"/browse {int(num_SCP) - 1}")
+        await call.answer()
 
 
 @dp.message_handler(commands=['start'])  # Просто приветствие
@@ -88,21 +111,6 @@ async def helper(msg: types.Message):  # Создание функции help
     await msg.reply(
         'Здесь вы можете найти полный архив SCP Foundation\n \n \n/browse *номер объекта* - для поиска статьи об объекте введите \n'
         '/profile - для просмотра профиля введите \n \nПо всем вопросам обращайтесь @vardabomb')
-
-
-@dp.message_handler(Text(equals="Мой профиль"))  # Выводим блок кнопок профиля пользователю
-async def with_puree(msg: types.Message):
-    global change_photo
-    await msg.reply("Это ваш профиль, любуйтесь", reply_markup=markup_profile)
-    change_photo = False
-    cur = conn.cursor()
-    profile = cur.execute(f'''SELECT * FROM users WHERE userid = {msg.from_user.id}''').fetchall()
-    conn.commit()
-    await bot.send_photo(msg.chat.id, str(profile[0][7]))
-    await bot.send_message(msg.chat.id,
-                           f'Имя: {profile[0][8]}.\nДата регистрации: {profile[0][6]}.\nКоличество запросов: {profile[0][4]}.\n'
-                           f'Уровень {profile[0][3]}.\n \nЧтобы повысить уровень делайте больше запросов\n \nВозможности:\n'
-                           f'/edit_nickname - изменить имя.\n/edit_photo - изменить фотографию')
 
 
 @dp.message_handler(commands=['edit_photo'])
@@ -137,6 +145,21 @@ async def edit_photo(msg: types.Message):
         await bot.send_message(msg.chat.id, "Красивая фотография, но что вы хотите?")
 
 
+@dp.message_handler(Text(equals="Мой профиль"))  # Выводим блок кнопок профиля пользователю
+async def with_puree(msg: types.Message):
+    global change_photo
+    await msg.reply("Это ваш профиль, любуйтесь", reply_markup=markup_profile)
+    change_photo = False
+    cur = conn.cursor()
+    profile = cur.execute(f'''SELECT * FROM users WHERE userid = {msg.from_user.id}''').fetchall()
+    conn.commit()
+    await bot.send_photo(msg.chat.id, str(profile[0][7]))
+    await bot.send_message(msg.chat.id,
+                           f'Имя: {profile[0][8]}.\nДата регистрации: {profile[0][6]}.\nКоличество запросов: {profile[0][4]}.\n'
+                           f'Уровень {profile[0][3]}.\n \nЧтобы повысить уровень делайте больше запросов\n \nВозможности:\n'
+                           f'/edit_nickname - изменить имя.\n/edit_photo - изменить фотографию')
+
+
 @dp.message_handler(Text(equals="Меню"))  # Выводим блок кнопок меню пользователю
 async def with_puree(message: types.Message):
     await message.reply("Вы в главном меню", reply_markup=markup_menu)
@@ -144,6 +167,7 @@ async def with_puree(message: types.Message):
 
 @dp.message_handler(Text(equals="Поиск SCP"))  # Переход в статус получения номера SCP от пользователя
 async def with_puree(message: types.Message):
+    global num_SCP
     await message.reply("Введите номер SCP", reply_markup=greet_search)
     state = dp.current_state(user=message.from_user.id)
     await state.set_state(States.all()[0])  # Вот тут включается статус 1
@@ -152,14 +176,16 @@ async def with_puree(message: types.Message):
 @dp.message_handler(Text(equals="Активировать протокол поиска"),
                     state=['state_1'])  # После нажатия этой кнопки должна появиться информация об SCP
 async def with_puree(msg: types.Message):
-    global num_SCP
+    global num_SCP, change_photo
     if num_SCP:  # Проверка на то вводил ли пользователь вообще номер SCP
-        await msg.reply(f"Я отчаянно пытаюсь найти информацию про SCP {num_SCP}", reply_markup=markup_menu)
-        global change_photo
+        await msg.reply(f"Я отчаянно пытаюсь найти информацию про SCP-{num_SCP}")
+
         change_photo = False
         argument = num_SCP  # Аргумент, то есть название объекта
+        print(num_SCP)
         if len(argument) < 3:
             argument = '0' * (3 - len(argument)) + argument
+            num_SCP = argument
         try:  # Пытаемся найти этот объект, в противном случае пишем что не нашли
             info = get_content(f'http://scp-ru.wikidot.com/scp-{argument}', id='page-title') + '\n' + \
                    get_content(f'http://scp-ru.wikidot.com/scp-{argument}')  # Создаём ответ бота
@@ -175,8 +201,10 @@ async def with_puree(msg: types.Message):
                     info) > 4096:  # Если он слишком большой, то мы делим его на несколько сообщений для обхода ограничений Telegram
                 for x in range(0, len(info), 4096):
                     await bot.send_message(msg.chat.id, info[x:x + 4096])
+                await bot.send_message(msg.chat.id, phrasebook['end_search'], reply_markup=get_keyboard(argument))
             else:
                 await bot.send_message(msg.chat.id, info)
+                await bot.send_message(msg.chat.id, phrasebook['end_search'], reply_markup=get_keyboard(argument))
             cur = conn.cursor()
             cur.execute(
                 f'''UPDATE users SET number_of_requests = number_of_requests + 1 WHERE userid = {msg.from_user.id}''')
@@ -204,9 +232,6 @@ async def with_puree(msg: types.Message):
                 cur.execute(
                     f"""UPDATE users SET level = '7' WHERE userid = {msg.from_user.id}""")
             conn.commit()  # Прибавляем 1 к кол-ву запросов, для отслеживания прогресса уровня
-            state = dp.current_state(user=msg.from_user.id)
-            await state.reset_state()
-            num_SCP = ''
         except Exception as e:  # Запись ошибки в лог, если пользователь столкнулся с ошибкой разряда ERROR или FATAL, возможно появление логов от самого aiogram
             logging.error(' '.join([str(msg.from_user.id), msg.from_user.username, str(e)]))
             cur = conn.cursor()
@@ -214,10 +239,6 @@ async def with_puree(msg: types.Message):
                 f'''UPDATE users SET number_of_bugs = number_of_bugs + 1 WHERE userid = {msg.from_user.id}''')
             conn.commit()
             await msg.reply('Я всё обыскал, нигде не нашёл того, чего вы хотели, или же я допустил ошибку.')
-
-            state = dp.current_state(user=msg.from_user.id)
-            await state.reset_state()
-            num_SCP = ''
     else:
         await msg.reply('Ты не указали номер SCP')
 
