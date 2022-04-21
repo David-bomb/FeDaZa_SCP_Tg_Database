@@ -11,7 +11,6 @@ import logging
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
-import emoji
 
 # Создание бота, импорт токена из отдельного файла .env, установка логирования и соединения с БД
 dotenv_path = join(dirname(__file__), '.env')
@@ -27,7 +26,7 @@ logging.basicConfig(
     level=logging.ERROR
 )
 global change_photo
-change_photo = False
+change_photo = False  # TODO СМЕНИТЬ РЕАЛИЗАЦИЮ МЕХАНИКИ ЧЕРЕЗ users.db
 
 
 @dp.message_handler(commands=['start'])  # Просто приветствие
@@ -56,7 +55,7 @@ async def helper(msg: types.Message):  # Создание функции help
     language = cur.execute(f'''SELECT language FROM users WHERE userid = {msg.from_user.id}''').fetchall()[0][0]
     language_text = {
         'RU': 'Здесь вы можете найти полный архив SCP Foundation\n \n \n/browse *номер объекта* - для поиска статьи об объекте \n'
-        '/profile - для просмотра профиля \n/change_language *language* - изменить язык (доступные языки RU, EN)\nПо всем вопросам обращайтесь @vardabomb',
+              '/profile - для просмотра профиля \n/change_language *language* - изменить язык (доступные языки RU, EN)\nПо всем вопросам обращайтесь @vardabomb',
         'EN': 'Here you can find the full SCP Foundation archive\n \n \n/browse *object number* - to search for an article about the object \n'
               '/profile - to view the profile \n/change_language *language* - to change the language (available languages RU, EN)\n \n'
               'Any questions contact @vardabomb'
@@ -78,7 +77,7 @@ async def helper(msg: types.Message):
             'EN': 'Successfully'
         }
         conn.commit()
-        await msg.answer(text=succesfully[language] + emoji.emojize(":thumbs_up:"))
+        await msg.answer(text=succesfully[language] + '👍')
 
 
 @dp.message_handler(commands=['profile'])
@@ -92,11 +91,11 @@ async def profile(msg: types.Message):  # создание функции про
     language = cur.execute(f'''SELECT language FROM users WHERE userid = {msg.from_user.id}''').fetchall()[0][0]
     language_text = {
         'RU': f'Имя: {profile[0][8]}.\nДата регистрации: {profile[0][6]}.\nКоличество запросов: {profile[0][4]}.\n'
-                           f'Уровень {profile[0][3]}.\n \nЧтобы повысить уровень делайте больше запросов\n \nВозможности:\n'
-                           f'/edit_nickname - изменить имя.\n/edit_photo - изменить фотографию',
+              f'Уровень {profile[0][3]}.\n \nЧтобы повысить уровень делайте больше запросов\n \nВозможности:\n'
+              f'/edit_nickname - изменить имя.\n/edit_photo - изменить фотографию',
         'EN': f'Name: {profile[0][8]}.\nRegistration Date: {profile[0][6]}.\nNumber of requests: {profile[0][4]}.\n'
-                           f'Level {profile[0][3]}.\n \nMake more requests to level up\n \nFeatures:\n'
-                           f'/edit_nickname *new nickname* - to change name.\n/edit_photo - to change photo'
+              f'Level {profile[0][3]}.\n \nMake more requests to level up\n \nFeatures:\n'
+              f'/edit_nickname *new nickname* - to change name.\n/edit_photo - to change photo'
     }
     await bot.send_photo(msg.chat.id, str(profile[0][7]))  # Вывод фото профиля и его статистики
     await bot.send_message(msg.chat.id, language_text[language])
@@ -130,8 +129,7 @@ async def edit_nickname(msg: types.Message):  # Смена никнейма в �
         }
         cur.execute(f"""UPDATE users SET nickname = '{argument}' WHERE userid = {msg.from_user.id}""")
         conn.commit()
-        await msg.answer(text=succesfully[language] + emoji.emojize(":thumbs_up:"))
-
+        await msg.answer(text=succesfully[language] + '👍')
 
 
 @dp.message_handler(content_types=[types.ContentType.PHOTO])
@@ -146,10 +144,11 @@ async def edit_photo(msg: types.Message):  # Функция получения �
             'RU': 'Успешно',
             'EN': 'Successfully'
         }
-        cur.execute(f"""UPDATE users SET photo = '{file_info.file_id}' WHERE userid = {msg.from_user.id}""") # Добавление фото в БД
+        cur.execute(
+            f"""UPDATE users SET photo = '{file_info.file_id}' WHERE userid = {msg.from_user.id}""")  # Добавление фото в БД
         conn.commit()
         change_photo = False
-        await msg.answer(text=succesfully[language] + emoji.emojize(":thumbs_up:"))
+        await msg.answer(text=succesfully[language] + '👍')
     else:
         cur = conn.cursor()
         language = cur.execute(f'''SELECT language FROM users WHERE userid = {msg.from_user.id}''').fetchall()[0][0]
@@ -181,11 +180,13 @@ async def browse(msg: types.Message):
             try:
                 if language == 'RU':
                     await bot.send_photo(msg.chat.id,
-                                     BeautifulSoup(text, 'html.parser').find(class_="rimg").find(class_="image").get(
-                                         'src'))
+                                         BeautifulSoup(text, 'html.parser').find(class_="rimg").find(
+                                             class_="image").get(
+                                             'src'))
                 elif language == 'EN':
                     await bot.send_photo(msg.chat.id,
-                                         BeautifulSoup(text, 'html.parser').find(class_="scp-image-block block-right").find(class_="image").get('src'))
+                                         BeautifulSoup(text, 'html.parser').find(
+                                             class_="scp-image-block block-right").find(class_="image").get('src'))
             except:
                 await bot.send_photo(msg.chat.id,
                                      'AgACAgIAAxkBAAIDd2JcUPUnu4OrqO59i9-M4FSRz3CmAALauDEbwQLoSo_J1EadLNMAAQEAAwIAA3MAAyQE')
