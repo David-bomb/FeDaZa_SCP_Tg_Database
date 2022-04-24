@@ -1,0 +1,48 @@
+2022-04-24 12:40:26,630 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('11 values for 10 columns')>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 51, in send_welcome
+    cur.execute(sql, data_tuple)
+sqlite3.OperationalError: 11 values for 10 columns
+2022-04-24 12:40:43,637 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('11 values for 10 columns')>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 51, in send_welcome
+    cur.execute(sql, data_tuple)
+sqlite3.OperationalError: 11 values for 10 columns
+2022-04-24 12:47:47,671 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('no such column: change_photo')>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 84, in profile
+    cur.execute(f'''UPDATE users SET change_photo = 'False' WHERE userid = {msg.from_user.id}''')
+sqlite3.OperationalError: no such column: change_photo

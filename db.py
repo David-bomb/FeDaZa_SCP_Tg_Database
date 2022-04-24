@@ -12,7 +12,9 @@ cur.execute("""CREATE TABLE IF NOT EXISTS users(
    number_of_bugs INTEGER,
    date_of_registration DATETIME,
    photo TEXT,
-   nickname TEXT)
+   nickname TEXT,
+   language TEXT,
+   change_language BOOLEAN)
 """)
 # Создается БД с колонками: id пользователя, "тэг" пользователя в telegram, имя,
 # уровень, кол-во запросов, кол-во вызванных ошибок (чтобы беседовать с проказниками)

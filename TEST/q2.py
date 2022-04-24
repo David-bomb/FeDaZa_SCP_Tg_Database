@@ -33,7 +33,7 @@ dp = Dispatcher(bot, storage=MemoryStorage())
 dp.middleware.setup(LoggingMiddleware())
 conn = sqlite3.connect('users.db')
 logging.basicConfig(
-    filename='errors.log',
+    filename='../errors.log',
     format='%(asctime)s %(levelname)s %(name)s %(message)s',
     level=logging.ERROR
 )
