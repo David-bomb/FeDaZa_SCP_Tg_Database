@@ -6,7 +6,7 @@ from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.contrib.middlewares.logging import LoggingMiddleware
 import sqlite3
 from dotenv import load_dotenv
-from utilites import get_content
+import utilites as u
 import logging
 import requests
 from bs4 import BeautifulSoup
@@ -142,8 +142,8 @@ async def browse(msg: types.Message):
                 'EN': f'https://scp-wiki.wikidot.com/scp-{argument}'
             }
             print(browse[language])
-            info = get_content(browse[language], id='page-title') + '\n' + \
-                   get_content(browse[language])  # Создаём ответ бота
+            info = u.get_content(browse[language], id='page-title') + '\n' + \
+                   u.get_content(browse[language])  # Создаём ответ бота
             text = requests.get(browse[language]).text
             try:
                 if language == 'RU':
@@ -158,8 +158,7 @@ async def browse(msg: types.Message):
             except:
                 await bot.send_photo(msg.chat.id,
                                      'AgACAgIAAxkBAAIDd2JcUPUnu4OrqO59i9-M4FSRz3CmAALauDEbwQLoSo_J1EadLNMAAQEAAwIAA3MAAyQE')
-            if len(
-                    info) > 4096:  # Если он слишком большой, то мы делим его на несколько сообщений для обхода ограничений Telegram
+            if len(info) > 4096:  # Если он слишком большой, то мы делим его на несколько сообщений для обхода ограничений Telegram
                 for x in range(0, len(info), 4096):
                     await bot.send_message(msg.chat.id, info[x:x + 4096])
             else:
