@@ -26,15 +26,15 @@ from utilites import browse
 
 # Создание бота, импорт токена из отдельного файла .env, установка логирования и соединения с БД
 
-dotenv_path = join(dirname(__file__), '../.env')
+dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 TOKEN = os.environ.get('TOKEN')
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot, storage=MemoryStorage())
 dp.middleware.setup(LoggingMiddleware())
-conn = sqlite3.connect('../users.db')
+conn = sqlite3.connect('users.db')
 logging.basicConfig(
-    filename='../errors.log',
+    filename='errors.log',
     format='%(asctime)s %(levelname)s %(name)s %(message)s',
     level=logging.ERROR
 )
@@ -51,7 +51,7 @@ button_profile = KeyboardButton('Мой профиль')
 # Создание кнопочных блоков и присваивание им свойств
 greet_search = ReplyKeyboardMarkup(
     resize_keyboard=True, one_time_keyboard=True
-).add(button_search)
+).row(button_profile).add(button_search)
 markup_menu = ReplyKeyboardMarkup(resize_keyboard=True).row(button_profile).add(
     button_name_search)
 markup_profile = ReplyKeyboardMarkup(resize_keyboard=True).row(button_menu).add(
@@ -92,7 +92,7 @@ async def callbacks_num(call: types.CallbackQuery):
         await call.answer()
 
 
-@dp.message_handler(commands=['start'])  # Просто приветствие
+@dp.message_handler(commands=['start'],state=States.all())  # Просто приветствие
 async def send_welcome(msg: types.Message):
     global change_photo
     change_photo = False
@@ -112,7 +112,7 @@ async def send_welcome(msg: types.Message):
         conn.commit()
 
 
-@dp.message_handler(commands=['help'])
+@dp.message_handler(commands=['help'],state=States.all())
 async def helper(msg: types.Message):  # Создание функции help
     global change_photo
     change_photo = False
@@ -121,14 +121,14 @@ async def helper(msg: types.Message):  # Создание функции help
         '/profile - для просмотра профиля введите \n \nПо всем вопросам обращайтесь @vardabomb')
 
 
-@dp.message_handler(commands=['edit_photo'])
+@dp.message_handler(commands=['edit_photo'],state=States.all())
 async def edit_photo(msg: types.Message):
     global change_photo
     change_photo = True
     await bot.send_message(msg.chat.id, "Пришлите новую фотографию:")
 
 
-@dp.message_handler(commands=['edit_nickname'])
+@dp.message_handler(commands=['edit_nickname'],state=States.all())
 async def edit_nickname(msg: types.Message):
     global change_photo
     change_photo = False
