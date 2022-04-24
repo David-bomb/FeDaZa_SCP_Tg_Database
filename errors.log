@@ -46,3 +46,86 @@ Traceback (most recent call last):
   File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 84, in profile
     cur.execute(f'''UPDATE users SET change_photo = 'False' WHERE userid = {msg.from_user.id}''')
 sqlite3.OperationalError: no such column: change_photo
+2022-04-24 13:26:57,333 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-11' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=KeyError(0)>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 113, in profile
+    await bot.send_photo(msg.chat.id, str(profile[0][7]))  # Вывод фото профиля и его статистики
+KeyError: 0
+2022-04-24 13:28:20,256 ERROR root 855707706 kurakura222 tuple indices must be integers or slices, not str
+2022-04-24 13:29:22,359 ERROR root 855707706 kurakura222 tuple indices must be integers or slices, not str
+2022-04-24 13:29:56,692 ERROR root 855707706 kurakura222 tuple indices must be integers or slices, not str
+2022-04-24 13:31:11,361 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=UnboundLocalError("local variable 'browse' referenced before assignment")>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 168, in browse
+    print(browse[language])
+UnboundLocalError: local variable 'browse' referenced before assignment
+2022-04-24 13:31:27,928 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=UnboundLocalError("local variable 'browse' referenced before assignment")>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 168, in browse
+    print(browse[language])
+UnboundLocalError: local variable 'browse' referenced before assignment
+2022-04-24 13:32:01,478 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-13' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=NameError("name 'language_text' is not defined")>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 83, in helper
+    await msg.reply(language_text['help'][language])
+NameError: name 'language_text' is not defined
+2022-04-24 13:34:47,326 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=NameError("name 'language_text' is not defined")>
+Traceback (most recent call last):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "E:\SCP_FOUNDATION\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "E:/SCP_FOUNDATION/FeDaZa_SCP_Tg_Database/main.py", line 83, in helper
+    await msg.reply(language_text['help'][language])
+NameError: name 'language_text' is not defined

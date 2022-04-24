@@ -77,10 +77,9 @@ async def send_welcome(msg: types.Message):
 async def helper(msg: types.Message):  # Создание функции help
     cur = conn.cursor()
     cur.execute(f'''UPDATE users SET change_photo = 'False' WHERE userid = {msg.from_user.id}''')
-    print()
     language = cur.execute(f'''SELECT language FROM users WHERE userid = {msg.from_user.id}''').fetchall()[0][0]
     conn.commit()
-    await msg.reply(language_text['help'][language])
+    await msg.reply(languages['help'][language])
 
 
 @dp.message_handler(commands=['change_language'])
@@ -102,7 +101,7 @@ async def profile(msg: types.Message):  # создание функции про
     profile = cur.execute(f'''SELECT * FROM users WHERE userid = {msg.from_user.id}''').fetchall()
     language = cur.execute(f'''SELECT language FROM users WHERE userid = {msg.from_user.id}''').fetchall()[0][0]
     conn.commit()
-    profile = {
+    profile1 = {
         'RU': f'Имя: {profile[0][8]}.\nДата регистрации: {profile[0][6]}.\nКоличество запросов: {profile[0][4]}.\n'
               f'Уровень {profile[0][3]}.\n \nЧтобы повысить уровень делайте больше запросов\n \nВозможности:\n'
               f'/edit_nickname - изменить имя.\n/edit_photo - изменить фотографию',
@@ -111,7 +110,7 @@ async def profile(msg: types.Message):  # создание функции про
               f'/edit_nickname *new nickname* - to change name.\n/edit_photo - to change photo'
     }
     await bot.send_photo(msg.chat.id, str(profile[0][7]))  # Вывод фото профиля и его статистики
-    await bot.send_message(msg.chat.id, profile[language])
+    await bot.send_message(msg.chat.id, profile1[language])
 
 
 @dp.message_handler(commands=['edit_photo'])
@@ -168,7 +167,8 @@ async def browse(msg: types.Message):
             browse = {
                 'RU': f'http://scp-ru.wikidot.com/scp-{argument}',
                 'EN': f'https://scp-wiki.wikidot.com/scp-{argument}'
-            },
+            }
+            print(browse[language])
             info = get_content(browse[language], id='page-title') + '\n' + \
                    get_content(browse[language])  # Создаём ответ бота
             text = requests.get(browse[language]).text
