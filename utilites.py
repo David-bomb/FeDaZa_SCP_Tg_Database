@@ -26,7 +26,7 @@ def get_content(url, id='page-content'):  # Функция чтения нужн
     return str(items)
 
 
-def get_keyboard(num):
+def get_keyboard_search(num):
     # Генерация клавиатуры.
     _scp = str(int(num) - 1)
     scp_ = str(int(num) + 1)
@@ -34,14 +34,22 @@ def get_keyboard(num):
         _scp = '0' * (3 - len(_scp)) + _scp
         scp_ = '0' * (3 - len(scp_)) + scp_
     buttons = [
-        types.InlineKeyboardButton(text="SCP-" + _scp, callback_data="btn_behind"),
-        types.InlineKeyboardButton(text="Остановить протокол", callback_data="btn_stop"),
-        types.InlineKeyboardButton(text="SCP-" + scp_, callback_data="btn_front")]
+        types.InlineKeyboardButton(text="SCP-" + _scp, callback_data="btn_s_behind"),
+        types.InlineKeyboardButton(text="Остановить протокол", callback_data="btn_s_stop"),
+        types.InlineKeyboardButton(text="SCP-" + scp_, callback_data="btn_s_front")]
 
     keyboard = types.InlineKeyboardMarkup(row_width=3)
     keyboard.add(*buttons)
     return keyboard
 
+def get_keyboard_change():
+    # Генерация клавиатуры.
+    buttons = [
+        types.InlineKeyboardButton(text="Сменить фото профиля", callback_data="btn_с_photo"),
+        types.InlineKeyboardButton(text="Сменить имя профиля", callback_data="btn_с_name")]
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
+    keyboard.add(*buttons)
+    return keyboard
 
 def browse(argument, id):
     retur = {'img': None, 'text': None}
