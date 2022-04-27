@@ -2587,3 +2587,57 @@ Traceback (most recent call last):
   File "F:/Zakhar/Python/FFFFFFFFFFFFFFF/FeDaZa_SCP_Tg_Database/TEST/q2.py", line 114, in callbacks_num
     await call.message.reply(reply_markup=markup_menu)
 TypeError: reply() missing 1 required positional argument: 'text'
+2022-04-27 23:57:43,010 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-44' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('no such table: users')>
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "F:/Zakhar/Python/FFFFFFFFFFFFFFF/FeDaZa_SCP_Tg_Database/TEST/q2.py", line 116, in callbacks_num
+    info = browse(f'{int(num_SCP) + 1}', call.message.chat.id)
+  File "F:\Zakhar\Python\FFFFFFFFFFFFFFF\FeDaZa_SCP_Tg_Database\utilites.py", line 57, in browse
+    cur.execute(f'''UPDATE users SET change_photo = 'False' WHERE userid = {id}''')
+sqlite3.OperationalError: no such table: users
+2022-04-27 23:57:45,100 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-47' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('no such table: users')>
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "F:/Zakhar/Python/FFFFFFFFFFFFFFF/FeDaZa_SCP_Tg_Database/TEST/q2.py", line 116, in callbacks_num
+    info = browse(f'{int(num_SCP) + 1}', call.message.chat.id)
+  File "F:\Zakhar\Python\FFFFFFFFFFFFFFF\FeDaZa_SCP_Tg_Database\utilites.py", line 57, in browse
+    cur.execute(f'''UPDATE users SET change_photo = 'False' WHERE userid = {id}''')
+sqlite3.OperationalError: no such table: users
+2022-04-27 23:57:46,266 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-50' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('no such table: users')>
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "F:/Zakhar/Python/FFFFFFFFFFFFFFF/FeDaZa_SCP_Tg_Database/TEST/q2.py", line 116, in callbacks_num
+    info = browse(f'{int(num_SCP) + 1}', call.message.chat.id)
+  File "F:\Zakhar\Python\FFFFFFFFFFFFFFF\FeDaZa_SCP_Tg_Database\utilites.py", line 57, in browse
+    cur.execute(f'''UPDATE users SET change_photo = 'False' WHERE userid = {id}''')
+sqlite3.OperationalError: no such table: users
