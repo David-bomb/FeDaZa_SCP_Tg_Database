@@ -763,3 +763,1827 @@ Traceback (most recent call last):
   File "F:/Zakhar/Python/FFFFFFFFFFFFFFF/FeDaZa_SCP_Tg_Database/TEST/q2.py", line 74, in callbacks_num
     await call.message.answer(reply_markup=markup_menu)
 TypeError: answer() missing 1 required positional argument: 'text'
+2022-04-26 06:59:16,371 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiohttp\client.py", line 1138, in __aenter__
+    self._resp = await self._coro
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiohttp\client.py", line 559, in _request
+    await resp.start(conn)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiohttp\client_reqrep.py", line 913, in start
+    self._continue = None
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiohttp\helpers.py", line 721, in __exit__
+    raise asyncio.TimeoutError from None
+asyncio.exceptions.TimeoutError
+2022-04-26 20:34:40,173 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:34:50,546 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:35:00,677 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:35:10,822 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:36:40,031 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:36:50,177 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:37:00,315 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:37:10,441 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:37:20,570 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:37:30,701 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:37:40,844 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:37:50,992 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:38:01,126 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:38:11,283 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:38:21,427 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:38:31,602 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:38:41,791 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:38:52,002 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:39:02,276 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:39:12,467 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:39:30,420 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:39:40,583 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:39:50,748 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:40:00,892 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:40:11,052 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:40:21,322 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:40:31,567 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:40:41,712 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:40:51,857 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:41:02,066 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:41:12,261 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:41:22,434 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:41:32,663 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:41:42,845 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:41:53,000 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:42:03,170 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:42:13,337 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:42:23,519 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:42:33,679 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:42:43,847 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:42:54,076 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:43:04,217 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:43:14,413 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:43:23,269 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:43:33,431 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:43:43,647 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:43:53,841 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:44:03,987 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:44:14,217 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:44:24,376 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:44:34,580 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:44:44,748 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:44:54,983 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:45:05,200 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:45:15,399 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:45:25,589 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:45:35,760 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:45:45,920 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:45:56,094 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:46:06,240 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:46:16,495 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:46:26,670 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:46:36,836 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:46:47,036 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:46:57,198 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:47:07,415 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:47:17,568 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:47:27,725 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:47:37,905 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:47:48,052 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:47:58,219 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:48:08,380 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:48:18,538 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:48:28,822 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:48:39,013 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:48:49,304 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:48:59,467 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:49:09,623 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:49:19,780 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:49:29,928 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:49:40,097 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:49:50,255 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:50:00,467 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:50:10,620 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:50:20,786 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:50:30,952 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:50:41,122 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:50:51,273 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:51:01,424 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:51:11,556 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:51:21,704 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:51:31,863 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:51:42,017 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:51:52,180 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:52:02,327 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:52:12,455 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:52:22,615 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:52:32,786 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 20:52:42,922 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2022-04-26 21:16:25,001 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-11' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OSError(22, 'Invalid argument')>
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 302, in process_update
+    return await self.my_chat_member_handlers.notify(update.my_chat_member)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 100, in notify
+    await self.dispatcher.middleware.trigger(f"pre_process_{self.middleware_key}", args + (data,))
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\middlewares.py", line 53, in trigger
+    await app.trigger(action, args)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\middlewares.py", line 106, in trigger
+    await handler(*args)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\contrib\middlewares\logging.py", line 167, in on_pre_process_my_chat_member
+    self.logger.info(f"Received chat member update "
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\types\base.py", line 177, in to_python
+    value = self.props[name].export(self)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\types\fields.py", line 95, in export
+    return self.serialize(self.get_value(instance))
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\types\fields.py", line 172, in serialize
+    return round(value.timestamp())
+OSError: [Errno 22] Invalid argument
+2022-04-26 21:16:35,668 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-14' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OSError(22, 'Invalid argument')>
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 302, in process_update
+    return await self.my_chat_member_handlers.notify(update.my_chat_member)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 100, in notify
+    await self.dispatcher.middleware.trigger(f"pre_process_{self.middleware_key}", args + (data,))
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\middlewares.py", line 53, in trigger
+    await app.trigger(action, args)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\middlewares.py", line 106, in trigger
+    await handler(*args)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\contrib\middlewares\logging.py", line 167, in on_pre_process_my_chat_member
+    self.logger.info(f"Received chat member update "
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\types\base.py", line 177, in to_python
+    value = self.props[name].export(self)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\types\fields.py", line 95, in export
+    return self.serialize(self.get_value(instance))
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\types\fields.py", line 172, in serialize
+    return round(value.timestamp())
+OSError: [Errno 22] Invalid argument
+2022-04-26 21:17:31,754 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-27' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OSError(22, 'Invalid argument')>
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 302, in process_update
+    return await self.my_chat_member_handlers.notify(update.my_chat_member)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 100, in notify
+    await self.dispatcher.middleware.trigger(f"pre_process_{self.middleware_key}", args + (data,))
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\middlewares.py", line 53, in trigger
+    await app.trigger(action, args)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\middlewares.py", line 106, in trigger
+    await handler(*args)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\contrib\middlewares\logging.py", line 167, in on_pre_process_my_chat_member
+    self.logger.info(f"Received chat member update "
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\types\base.py", line 177, in to_python
+    value = self.props[name].export(self)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\types\fields.py", line 95, in export
+    return self.serialize(self.get_value(instance))
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\types\fields.py", line 172, in serialize
+    return round(value.timestamp())
+OSError: [Errno 22] Invalid argument
+2022-04-26 21:17:33,696 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-30' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OSError(22, 'Invalid argument')>
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 302, in process_update
+    return await self.my_chat_member_handlers.notify(update.my_chat_member)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 100, in notify
+    await self.dispatcher.middleware.trigger(f"pre_process_{self.middleware_key}", args + (data,))
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\middlewares.py", line 53, in trigger
+    await app.trigger(action, args)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\middlewares.py", line 106, in trigger
+    await handler(*args)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\contrib\middlewares\logging.py", line 167, in on_pre_process_my_chat_member
+    self.logger.info(f"Received chat member update "
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\types\base.py", line 177, in to_python
+    value = self.props[name].export(self)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\types\fields.py", line 95, in export
+    return self.serialize(self.get_value(instance))
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\types\fields.py", line 172, in serialize
+    return round(value.timestamp())
+OSError: [Errno 22] Invalid argument
+2022-04-26 21:17:50,448 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-33' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OSError(22, 'Invalid argument')>
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 302, in process_update
+    return await self.my_chat_member_handlers.notify(update.my_chat_member)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 100, in notify
+    await self.dispatcher.middleware.trigger(f"pre_process_{self.middleware_key}", args + (data,))
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\middlewares.py", line 53, in trigger
+    await app.trigger(action, args)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\middlewares.py", line 106, in trigger
+    await handler(*args)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\contrib\middlewares\logging.py", line 167, in on_pre_process_my_chat_member
+    self.logger.info(f"Received chat member update "
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\types\base.py", line 177, in to_python
+    value = self.props[name].export(self)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\types\fields.py", line 95, in export
+    return self.serialize(self.get_value(instance))
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\types\fields.py", line 172, in serialize
+    return round(value.timestamp())
+OSError: [Errno 22] Invalid argument
+2022-04-26 21:17:52,887 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-41' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OSError(22, 'Invalid argument')>
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 302, in process_update
+    return await self.my_chat_member_handlers.notify(update.my_chat_member)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 100, in notify
+    await self.dispatcher.middleware.trigger(f"pre_process_{self.middleware_key}", args + (data,))
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\middlewares.py", line 53, in trigger
+    await app.trigger(action, args)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\middlewares.py", line 106, in trigger
+    await handler(*args)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\contrib\middlewares\logging.py", line 167, in on_pre_process_my_chat_member
+    self.logger.info(f"Received chat member update "
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\types\base.py", line 177, in to_python
+    value = self.props[name].export(self)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\types\fields.py", line 95, in export
+    return self.serialize(self.get_value(instance))
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\types\fields.py", line 172, in serialize
+    return round(value.timestamp())
+OSError: [Errno 22] Invalid argument
+2022-04-27 23:12:59,949 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError('list indices must be integers or slices, not str')>
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "F:/Zakhar/Python/FFFFFFFFFFFFFFF/FeDaZa_SCP_Tg_Database/TEST/q2.py", line 65, in send_welcome
+    await state.set_state(States.all()['state_work'])
+TypeError: list indices must be integers or slices, not str
+2022-04-27 23:13:02,352 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-10' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError('list indices must be integers or slices, not str')>
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "F:/Zakhar/Python/FFFFFFFFFFFFFFF/FeDaZa_SCP_Tg_Database/TEST/q2.py", line 65, in send_welcome
+    await state.set_state(States.all()['state_work'])
+TypeError: list indices must be integers or slices, not str
+2022-04-27 23:13:06,984 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError('list indices must be integers or slices, not str')>
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "F:/Zakhar/Python/FFFFFFFFFFFFFFF/FeDaZa_SCP_Tg_Database/TEST/q2.py", line 65, in send_welcome
+    await state.set_state(States.all()['state_work'])
+TypeError: list indices must be integers or slices, not str
+2022-04-27 23:13:09,621 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-10' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError('list indices must be integers or slices, not str')>
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "F:/Zakhar/Python/FFFFFFFFFFFFFFF/FeDaZa_SCP_Tg_Database/TEST/q2.py", line 65, in send_welcome
+    await state.set_state(States.all()['state_work'])
+TypeError: list indices must be integers or slices, not str
+2022-04-27 23:19:16,976 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError('list indices must be integers or slices, not str')>
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "F:/Zakhar/Python/FFFFFFFFFFFFFFF/FeDaZa_SCP_Tg_Database/TEST/q2.py", line 65, in send_welcome
+    await state.set_state(States.all()['state_work'])
+TypeError: list indices must be integers or slices, not str
+2022-04-27 23:19:47,660 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError('list indices must be integers or slices, not str')>
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "F:/Zakhar/Python/FFFFFFFFFFFFFFF/FeDaZa_SCP_Tg_Database/TEST/q2.py", line 66, in send_welcome
+    await state.set_state(States.all()['state_work'])
+TypeError: list indices must be integers or slices, not str
+2022-04-27 23:20:38,074 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("'type' object is not subscriptable")>
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "F:/Zakhar/Python/FFFFFFFFFFFFFFF/FeDaZa_SCP_Tg_Database/TEST/q2.py", line 66, in send_welcome
+    await state.set_state(States['state_work'])
+TypeError: 'type' object is not subscriptable
+2022-04-27 23:31:26,423 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-80' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('no such table: users')>
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "F:/Zakhar/Python/FFFFFFFFFFFFFFF/FeDaZa_SCP_Tg_Database/TEST/q2.py", line 103, in callbacks_num
+    info = browse(f'{int(num_SCP) + 1}', call.message.chat.id)
+  File "F:\Zakhar\Python\FFFFFFFFFFFFFFF\FeDaZa_SCP_Tg_Database\utilites.py", line 57, in browse
+    cur.execute(f'''UPDATE users SET change_photo = 'False' WHERE userid = {id}''')
+sqlite3.OperationalError: no such table: users
+2022-04-27 23:31:27,626 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-83' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('no such table: users')>
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "F:/Zakhar/Python/FFFFFFFFFFFFFFF/FeDaZa_SCP_Tg_Database/TEST/q2.py", line 117, in callbacks_num
+    info = browse(f'{int(num_SCP) - 1}', call.message.chat.id)
+  File "F:\Zakhar\Python\FFFFFFFFFFFFFFF\FeDaZa_SCP_Tg_Database\utilites.py", line 57, in browse
+    cur.execute(f'''UPDATE users SET change_photo = 'False' WHERE userid = {id}''')
+sqlite3.OperationalError: no such table: users
+2022-04-27 23:35:00,890 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-103' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("reply() missing 1 required positional argument: 'text'")>
+Traceback (most recent call last):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "F:/Zakhar/Python/FFFFFFFFFFFFFFF/FeDaZa_SCP_Tg_Database/TEST/q2.py", line 114, in callbacks_num
+    await call.message.reply(reply_markup=markup_menu)
+TypeError: reply() missing 1 required positional argument: 'text'

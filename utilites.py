@@ -8,7 +8,7 @@ from language import languages
 # Файл с функциями для упрощения чтения кода
 
 phrasebook = {
-    "end_search": f"{'—' * 15}\nПродолжите просмотр данных? Ручной ввод активирован"
+    "end_search": f"Продолжите просмотр данных? Ручной ввод активирован"
 
 }
 logging.basicConfig(
@@ -34,9 +34,9 @@ def get_keyboard_search(num):
         _scp = '0' * (3 - len(_scp)) + _scp
         scp_ = '0' * (3 - len(scp_)) + scp_
     buttons = [
-        types.InlineKeyboardButton(text="SCP-" + _scp, callback_data="btn_s_behind"),
-        types.InlineKeyboardButton(text="Остановить протокол", callback_data="btn_s_stop"),
-        types.InlineKeyboardButton(text="SCP-" + scp_, callback_data="btn_s_front")]
+        types.InlineKeyboardButton(text="SCP-" + _scp, callback_data="search_behind"),
+        types.InlineKeyboardButton(text="Остановить протокол", callback_data="search_stop"),
+        types.InlineKeyboardButton(text="SCP-" + scp_, callback_data="search_front")]
 
     keyboard = types.InlineKeyboardMarkup(row_width=3)
     keyboard.add(*buttons)
@@ -45,8 +45,8 @@ def get_keyboard_search(num):
 def get_keyboard_change():
     # Генерация клавиатуры.
     buttons = [
-        types.InlineKeyboardButton(text="Сменить фото профиля", callback_data="btn_с_photo"),
-        types.InlineKeyboardButton(text="Сменить имя профиля", callback_data="btn_с_name")]
+        types.InlineKeyboardButton(text="Сменить фото профиля", callback_data="change_photo"),
+        types.InlineKeyboardButton(text="Сменить имя профиля", callback_data="change_name")]
     keyboard = types.InlineKeyboardMarkup(row_width=2)
     keyboard.add(*buttons)
     return keyboard

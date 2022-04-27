@@ -41,6 +41,7 @@ button_menu = KeyboardButton('Меню')
 button_profile = KeyboardButton('Мой профиль')
 
 # Создание кнопочных блоков и присваивание им свойств
+return_profile = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).add(button_profile)
 greet_search = ReplyKeyboardMarkup(
     resize_keyboard=True, one_time_keyboard=True
 ).row(button_menu).add(button_search)
@@ -52,9 +53,11 @@ markup_profile = ReplyKeyboardMarkup(resize_keyboard=True).row(button_menu).add(
 
 class States(Helper):
     mode = HelperMode.snake_case
-    STATE_1 = ListItem()  # Уровень для работы с ботом
-    STATE_2 = ListItem()  # Уровень для ввода номера SCP объекта
-    STATE_3 = ListItem()  # Уровень для смены ника и фото
+    STATE1_WORK = ListItem()  # Уровень для работы с ботом
+    STATE2_SEARCH = ListItem()  # Уровень для ввода номера SCP объекта
+
+    STATE4_PHOTO = ListItem()  # Уровень для смены фото
+    STATE5_NAME = ListItem()  # Уровень для смены ника и фото
 
 
 
@@ -64,6 +67,7 @@ async def send_welcome(msg: types.Message):
     global change_photo
 
     state = dp.current_state(user=msg.from_user.id)
+    print(States.all())
     await state.set_state(States.all()[0])
 
     change_photo = False
@@ -82,22 +86,32 @@ async def send_welcome(msg: types.Message):
         cur.execute(sql, data_tuple)
         conn.commit()
 
+
 @dp.message_handler(commands=['start'], state=States.all())  # Просто приветствие при перезагрузке
 async def send_welcome(msg: types.Message):
-    global change_photo
-
     state = dp.current_state(user=msg.from_user.id)
     await state.set_state(States.all()[0])
-
-    change_photo = False
     await msg.reply(f'Привет, {msg.from_user.first_name} я успешно перезагрузился и полностью готов к работе!',
                     reply_markup=markup_menu)
 
 
-@dp.callback_query_handler(Text(startswith="btn_s_"))  # Обработка запросов инлайн кнопок поиска
+@dp.message_handler(commands=['help'], state=States.all())
+async def helper(msg: types.Message):  # Создание функции help
+    state = dp.current_state(user=msg.from_user.id)
+    await state.set_state(States.all()[0])
+    await msg.reply(
+        'Здесь вы можете найти полный архив SCP Foundation\n \n \n/browse *номер объекта* - для поиска статьи об объекте введите \n'
+        '/profile - для просмотра профиля введите \n \nПо всем вопросам обращайтесь @vardabomb')
+
+
+@dp.callback_query_handler(Text(startswith="search_"),
+                           state=States.STATE2_SEARCH)  # Обработка запросов инлайн кнопок поиска
 async def callbacks_num(call: types.CallbackQuery):
     global num_SCP
-    action = call.data.split("_")[2]
+    action = call.data.split("_")[1]
+
+    print('Да да я тебя получаю')
+
     if action == "front":
         info = browse(f'{int(num_SCP) + 1}', call.message.chat.id)
         print(info['text'])
@@ -106,13 +120,14 @@ async def callbacks_num(call: types.CallbackQuery):
             await bot.send_message(call.message.chat.id, info['text'][x:x + 4096])
             print(1)
         await call.answer()
+
     elif action == 'stop':
         state = dp.current_state(user=call.from_user.id)
         await state.set_state(States.all()[0])
-
-        await call.message.reply('И вот вы снова в меню', reply_markup=markup_menu)
+        await bot.send_message(call.message.chat.id, 'И вот вы снова в меню', reply_markup=markup_menu)
         num_SCP = ''
         await call.answer()
+
     elif action == "behind":
         info = browse(f'{int(num_SCP) - 1}', call.message.chat.id)
         print(info['text'])
@@ -122,92 +137,34 @@ async def callbacks_num(call: types.CallbackQuery):
             print(1)
         await call.answer()
 
-@dp.callback_query_handler(Text(startswith="btn_с_"))  # Обработка запросов инлайн кнопок смены имени и фото
+
+@dp.callback_query_handler(Text(startswith="change_"),
+                           state=States.STATE1_WORK)  # Обработка запросов инлайн кнопок смены имени и фото
 async def callbacks_num(call: types.CallbackQuery):
-    global num_SCP, change_photo
-    change_photo = False
-
-    state = dp.current_state(user=call.from_user.id)
-    await state.set_state(States.all()[2])
-
-    action = call.data.split("_")[2]
+    action = call.data.split("_")[1]
     if action == "photo":
-        pass
+        await bot.send_message(call.message.chat.id, "Пришлите новую фотографию:")
+        state = dp.current_state(user=call.from_user.id)
+        await state.set_state(States.all()[2])
+        await call.answer()
     elif action == 'name':
         await bot.send_message(call.message.chat.id, 'Введите новое имя профиля')
-        argument = call.message.get_args()
-        if argument:
-            cur = conn.cursor()
-            cur.execute(f"""UPDATE users SET nickname = '{argument}' WHERE userid = {call.from_user.id}""")
-            conn.commit()
+        state = dp.current_state(user=call.from_user.id)
+        await state.set_state(States.all()[3])
         await call.answer()
 
 
-@dp.message_handler(state=['state_3'])  # Шаблон приема обычного сообщения
-async def get_text_messages(msg: types.Message):
-    global change_photo
-    change_photo = False
-    await msg.reply('C этого момента я буду звать вас ' + msg.text)
-    cur = conn.cursor()
-    cur.execute(f"""UPDATE users SET nickname = '{msg.text}' WHERE userid = {msg.from_user.id}""")
-    conn.commit()
-
-    state = dp.current_state(user=msg.from_user.id)
-    await state.set_state(States.all()[0])
-
-@dp.message_handler(commands=['help'], state=States.all())
-async def helper(msg: types.Message):  # Создание функции help
-    global change_photo
-    change_photo = False
-    await msg.reply(
-        'Здесь вы можете найти полный архив SCP Foundation\n \n \n/browse *номер объекта* - для поиска статьи об объекте введите \n'
-        '/profile - для просмотра профиля введите \n \nПо всем вопросам обращайтесь @vardabomb')
-
-
-@dp.message_handler(commands=['edit_photo'])
-async def edit_photo(msg: types.Message):
-    global change_photo
-    change_photo = True
-    await bot.send_message(msg.chat.id, "Пришлите новую фотографию:")
-
-
-@dp.message_handler(commands=['edit_nickname'])
-async def edit_nickname(msg: types.Message):
-    global change_photo
-    change_photo = False
-    argument = msg.get_args()
-    if argument:
-        cur = conn.cursor()
-        cur.execute(f"""UPDATE users SET nickname = '{argument}' WHERE userid = {msg.from_user.id}""")
-        conn.commit()
-
-
-@dp.message_handler(content_types=[types.ContentType.PHOTO])
-async def edit_photo(msg: types.Message):
-    global change_photo
-    if change_photo:
-        document_id = msg.photo[0].file_id
-        file_info = await bot.get_file(document_id)
-        cur = conn.cursor()
-        cur.execute(f"""UPDATE users SET photo = '{file_info.file_id}' WHERE userid = {msg.from_user.id}""")
-        conn.commit()
-        change_photo = False
-    else:
-        await bot.send_message(msg.chat.id, "Красивая фотография, но что вы хотите?")
-
-
-@dp.message_handler(Text(equals="Мой профиль"), state=['state_1'])  # Выводим блок кнопок профиля пользователю
+@dp.message_handler(Text(equals="Мой профиль"), state=States.STATE1_WORK | States.STATE4_PHOTO)  # Выводим блок кнопок профиля пользователю
 async def with_puree(msg: types.Message):
-    global change_photo
     await msg.reply("Это ваш профиль, любуйтесь", reply_markup=markup_profile)
-    change_photo = False
     cur = conn.cursor()
     profile = cur.execute(f'''SELECT * FROM users WHERE userid = {msg.from_user.id}''').fetchall()
     conn.commit()
     await bot.send_photo(msg.chat.id, str(profile[0][7]))
     await bot.send_message(msg.chat.id,
                            f'Имя: {profile[0][8]}.\nДата регистрации: {profile[0][6]}.\nКоличество запросов: {profile[0][4]}.\n'
-                           f'Уровень {profile[0][3]}.\n \nЧтобы повысить уровень делайте больше запросов', reply_markup=get_keyboard_change())
+                           f'Уровень {profile[0][3]}.\n \nЧтобы повысить уровень делайте больше запросов',
+                           reply_markup=get_keyboard_change())
 
 
 @dp.message_handler(Text(equals="Меню"), state=States.all())  # Выводим блок кнопок меню пользователю
@@ -217,22 +174,21 @@ async def with_puree(message: types.Message):
     await message.reply("Вы в главном меню", reply_markup=markup_menu)
 
 
-@dp.message_handler(Text(equals="Поиск SCP"), state=['state_1'])  # Переход в статус получения номера SCP от пользователя
+@dp.message_handler(Text(equals="Поиск SCP"),
+                    state=States.STATE1_WORK)  # Переход в статус получения номера SCP от пользователя
 async def with_puree(message: types.Message):
     global num_SCP
     await message.reply("Введите номер SCP", reply_markup=greet_search)
     state = dp.current_state(user=message.from_user.id)
-    await state.set_state(States.all()[1])  # Вот тут включается статус 1
+    await state.set_state(States.all()[1])  # Вот тут включается статус поиска
 
 
 @dp.message_handler(Text(equals="Активировать протокол поиска"),
-                    state=['state_2'])  # После нажатия этой кнопки должна появиться информация об SCP
+                    state=States.STATE2_SEARCH)  # После нажатия этой кнопки должна появиться информация об SCP
 async def with_puree(msg: types.Message):
-    global num_SCP, change_photo
+    global num_SCP
     if num_SCP:  # Проверка на то вводил ли пользователь вообще номер SCP
         await msg.reply(f"Я отчаянно пытаюсь найти информацию про SCP-{num_SCP}")
-
-        change_photo = False
         argument = num_SCP  # Аргумент, то есть название объекта
         if len(argument) < 3:
             argument = '0' * (3 - len(argument)) + argument
@@ -248,13 +204,16 @@ async def with_puree(msg: types.Message):
             except:
                 await bot.send_photo(msg.chat.id,
                                      'AgACAgIAAxkBAAIDd2JcUPUnu4OrqO59i9-M4FSRz3CmAALauDEbwQLoSo_J1EadLNMAAQEAAwIAA3MAAyQE')
-            if len(info) > 4096:  # Если он слишком большой, то мы делим его на несколько сообщений для обхода ограничений Telegram
+            if len(
+                    info) > 4096:  # Если он слишком большой, то мы делим его на несколько сообщений для обхода ограничений Telegram
                 for x in range(0, len(info), 4096):
                     await bot.send_message(msg.chat.id, info[x:x + 4096])
-                await bot.send_message(msg.chat.id, phrasebook['end_search'], reply_markup=get_keyboard_search(argument))
+                await bot.send_message(msg.chat.id, phrasebook['end_search'],
+                                       reply_markup=get_keyboard_search(argument))
             else:
                 await bot.send_message(msg.chat.id, info)
-                await bot.send_message(msg.chat.id, phrasebook['end_search'], reply_markup=get_keyboard_search(argument))
+                await bot.send_message(msg.chat.id, phrasebook['end_search'],
+                                       reply_markup=get_keyboard_search(argument))
             cur = conn.cursor()
             cur.execute(
                 f'''UPDATE users SET number_of_requests = number_of_requests + 1 WHERE userid = {msg.from_user.id}''')
@@ -292,30 +251,51 @@ async def with_puree(msg: types.Message):
     else:
         await msg.reply('Ты не указали номер SCP')
 
+
 @dp.message_handler()
 async def echo_message(msg: types.Message):
     await bot.send_message(msg.from_user.id, msg.text)
 
-@dp.message_handler(content_types=[types.ContentType.TEXT], state=['state_1'])  # Шаблон приема обычного сообщения
+
+@dp.message_handler(content_types=[types.ContentType.TEXT],
+                    state=States.STATE1_WORK)  # Шаблон приема обычного сообщения
 async def get_text_messages(msg: types.Message):
-    global change_photo
-    change_photo = False
     await msg.reply(
         f'{msg.from_user.first_name}, архив не может обработать данный тип информации, используйте команды.')
 
 
-@dp.message_handler(state=['state_2'])  # Заглушка для ввода неправильных сообщений пользователя в 1 статусе
+@dp.message_handler(state=States.STATE5_NAME)  # Шаблон приема имени для смены в профиле
+async def get_text_messages(msg: types.Message):
+    await msg.reply('C этого момента я буду звать вас ' + msg.text)
+    cur = conn.cursor()
+    cur.execute(f"""UPDATE users SET nickname = '{msg.text}' WHERE userid = {msg.from_user.id}""")
+    conn.commit()
+
+    state = dp.current_state(user=msg.from_user.id)
+    await state.set_state(States.all()[0])
+
+
+@dp.message_handler(content_types=[types.ContentType.PHOTO], state=States.STATE4_PHOTO)
+async def edit_photo(msg: types.Message):
+    document_id = msg.photo[0].file_id
+    file_info = await bot.get_file(document_id)
+    cur = conn.cursor()
+    cur.execute(f"""UPDATE users SET photo = '{file_info.file_id}' WHERE userid = {msg.from_user.id}""")
+    conn.commit()
+    await bot.send_message(msg.from_user.id, 'Фотография  успешно загружена')
+
+@dp.message_handler(content_types=[types.ContentType.TEXT], state=States.STATE4_PHOTO)
+async def edit_photo(msg: types.Message):
+    await msg.reply("Отправьте фото, либо вернитесь в профиль", reply_markup=return_profile)
+
+@dp.message_handler(state=States.STATE2_SEARCH)  # Заглушка для ввода неправильных сообщений пользователя в 1 статусе
 async def with_puree(message: types.Message):
     global num_SCP
     if message['text'].isdigit():
         num_SCP = message['text']
         await message.reply("Верный ввод")
-    elif message['text'] == '/start':
-        state = dp.current_state(user=message.from_user.id)
-        await state.reset_state()
     else:
         await message.reply("Ошибка ввода!\n\nВведите номер SCP без лишних знаков")
-
 
 
 async def shutdown(dispatcher: Dispatcher):  # Функция закрытия соединения с хранилищем состояний
