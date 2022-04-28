@@ -56,11 +56,14 @@ def get_keyboard_change():
 def browse(argument, id):
     retur = {'img': None, 'text': None}
     cur = m.conn.cursor()
-    cur.execute(f'''UPDATE users SET change_photo = 'False' WHERE userid = {id}''')
-    language = cur.execute(f'''SELECT language FROM users WHERE userid = {id}''').fetchall()[0][0]
+    print('Ищу ошибку 1 - курсор-словарь')
+    cur.execute(f'''UPDATE users SET change_photo = 'False' WHERE userid = {id}''')  # TODO ОШИБКА
+    language = cur.execute(f'''SELECT language FROM users WHERE userid = {id}''').fetchall()[0][0]  # TODO ОШИБКА
+    print('Ищу ошибку 2 - запрос')
     if len(argument) < 3:
         argument = '0' * (3 - len(argument)) + argument
     if argument:  # проверяем, ввели ли аргумент
+        print('Ищу ошибку 3 нарезка-аргумент')
         try:  # Пытаемся найти этот объект, в противном случае пишем что не нашли
             browse = {
                 'RU': f'http://scp-ru.wikidot.com/scp-{argument}',
@@ -78,6 +81,7 @@ def browse(argument, id):
                 elif language == 'EN':
                     retur['img'] = BeautifulSoup(text, 'html.parser').find(
                         class_="scp-image-block block-right").find(class_="image").get('src')
+                print('4', 'retur', sep=';')
             except:
                 retur['img'] = 'AgACAgIAAxkBAAIDd2JcUPUnu4OrqO59i9-M4FSRz3CmAALauDEbwQLoSo_J1EadLNMAAQEAAwIAA3MAAyQE'
             retur['text'] = info

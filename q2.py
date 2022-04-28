@@ -19,15 +19,15 @@ from utilites import browse
 
 # Создание бота, импорт токена из отдельного файла .env, установка логирования и соединения с БД
 
-dotenv_path = join(dirname(__file__), '../.env')
+dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 TOKEN = os.environ.get('TOKEN')
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot, storage=MemoryStorage())
 dp.middleware.setup(LoggingMiddleware())
-conn = sqlite3.connect('../users.db')
+conn = sqlite3.connect('users.db')
 logging.basicConfig(
-    filename='../errors.log',
+    filename='errors.log',
     format='%(asctime)s %(levelname)s %(name)s %(message)s',
     level=logging.ERROR
 )
@@ -60,7 +60,6 @@ class States(Helper):
 
 @dp.message_handler(commands=['start'])  # Первый старт, регистрирует пользователя и выдает статус
 async def send_welcome(msg: types.Message):
-
     state = dp.current_state(user=msg.from_user.id)
     print(States.all())
     await state.set_state(States.all()[0])
@@ -104,8 +103,10 @@ async def callbacks_num(call: types.CallbackQuery):
     global num_SCP
     action = call.data.split("_")[1]
 
-    if action == "front":  # Триггер нажатия на кнопку просмотра предыдущего SCP
-        info = browse(f'{int(num_SCP) + 1}', call.message.chat.id)
+    if action == "front":  # Триггер нажатия на кнопку просмотра следующего SCP
+        print('Вперед')
+        info = browse(f'{int(num_SCP) + 1}', call.message.chat.id)  # TODO ERROR
+        print(1)
         print(info['text'])
         await bot.send_photo(call.message.chat.id, info['img'])
         for x in range(0, len(info['text']), 4096):
@@ -114,13 +115,15 @@ async def callbacks_num(call: types.CallbackQuery):
         await call.answer()
 
     elif action == 'stop':  # Триггер нажатия на кнопку возврата в меню
+        print('Стоп')
         state = dp.current_state(user=call.from_user.id)
         await state.set_state(States.all()[0])
         await bot.send_message(call.message.chat.id, 'И вот вы снова в меню', reply_markup=markup_menu)
         num_SCP = ''
         await call.answer()
 
-    elif action == "behind":  # Триггер нажатия на кнопку просмотра следующего SCP
+    elif action == "behind":  # Триггер нажатия на кнопку просмотра предыдущего SCP
+        print('Назад')
         info = browse(f'{int(num_SCP) - 1}', call.message.chat.id)
         print(info['text'])
         await bot.send_photo(call.message.chat.id, info['img'])
