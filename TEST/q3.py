@@ -2,7 +2,7 @@ import os
 from os.path import dirname, join
 import sqlite3
 from dotenv import load_dotenv
-from utilites import get_content, phrasebook, get_keyboard
+from utilites import get_content, phrasebook, get_keyboard_search
 import logging
 import requests
 from bs4 import BeautifulSoup
@@ -207,10 +207,10 @@ async def with_puree(msg: types.Message):
             if len(info) > 4096:  # Если он слишком большой, то мы делим его на несколько сообщений для обхода ограничений Telegram
                 for x in range(0, len(info), 4096):
                     await bot.send_message(msg.chat.id, info[x:x + 4096])
-                await bot.send_message(msg.chat.id, phrasebook['end_search'], reply_markup=get_keyboard(argument))
+                await bot.send_message(msg.chat.id, phrasebook['end_search'], reply_markup=get_keyboard_search(argument))
             else:
                 await bot.send_message(msg.chat.id, info)
-                await bot.send_message(msg.chat.id, phrasebook['end_search'], reply_markup=get_keyboard(argument))
+                await bot.send_message(msg.chat.id, phrasebook['end_search'], reply_markup=get_keyboard_search(argument))
             cur = conn.cursor()
             cur.execute(
                 f'''UPDATE users SET number_of_requests = number_of_requests + 1 WHERE userid = {msg.from_user.id}''')

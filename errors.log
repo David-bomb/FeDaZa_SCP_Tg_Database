@@ -530,3 +530,18 @@ Traceback (most recent call last):
   File "C:\Users\Zakhar_M\AppData\Local\Programs\Python\Python38-32\lib\site-packages\aiohttp\helpers.py", line 721, in __exit__
     raise asyncio.TimeoutError from None
 asyncio.exceptions.TimeoutError
+2022-04-26 20:43:21,651 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
