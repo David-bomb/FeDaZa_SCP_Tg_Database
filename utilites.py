@@ -42,6 +42,7 @@ def get_keyboard_search(num):
     keyboard.add(*buttons)
     return keyboard
 
+
 def get_keyboard_change():
     # Генерация клавиатуры.
     buttons = [
@@ -50,6 +51,7 @@ def get_keyboard_change():
     keyboard = types.InlineKeyboardMarkup(row_width=2)
     keyboard.add(*buttons)
     return keyboard
+
 
 def browse(argument, id):
     retur = {'img': None, 'text': None}
@@ -71,11 +73,11 @@ def browse(argument, id):
             try:
                 if language == 'RU':
                     retur['img'] = BeautifulSoup(text, 'html.parser').find(class_="rimg").find(
-                                             class_="image").get(
-                                             'src')
+                        class_="image").get(
+                        'src')
                 elif language == 'EN':
-                   retur['img'] = BeautifulSoup(text, 'html.parser').find(
-                                             class_="scp-image-block block-right").find(class_="image").get('src')
+                    retur['img'] = BeautifulSoup(text, 'html.parser').find(
+                        class_="scp-image-block block-right").find(class_="image").get('src')
             except:
                 retur['img'] = 'AgACAgIAAxkBAAIDd2JcUPUnu4OrqO59i9-M4FSRz3CmAALauDEbwQLoSo_J1EadLNMAAQEAAwIAA3MAAyQE'
             retur['text'] = info
@@ -87,5 +89,7 @@ def browse(argument, id):
                 f'''UPDATE users SET number_of_bugs = number_of_bugs + 1 WHERE userid = {id})''')
             m.conn.commit()
             retur['text'] = languages['language_error'][language]
+            return retur
     else:
         retur['text'] = languages['language_error'][language]
+        return retur

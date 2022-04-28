@@ -74,7 +74,7 @@ async def send_welcome(msg: types.Message):
         sql = '''INSERT INTO users(userid, username, name,  level, number_of_requests, number_of_bugs, date_of_registration, 
         photo, nickname) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)'''
         data_tuple = (msg.from_user.id, msg.from_user.username, msg.from_user.first_name, 1, 0, 0,
-                      date_time_str.replace(microsecond=0),  # TODO Что за микросекондсы, используйте
+                      date_time_str.replace(microsecond=0),
                       'AgACAgIAAxkBAAIDd2JcUPUnu4OrqO59i9-M4FSRz3CmAALauDEbwQLoSo_J1EadLNMAAQEAAwIAA3MAAyQE',
                       msg.from_user.username)
         cur.execute(sql, data_tuple)
