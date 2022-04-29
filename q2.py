@@ -72,12 +72,11 @@ async def send_welcome(msg: types.Message):
     if not cur.execute(
             f'''SELECT * FROM users WHERE userid = {msg.from_user.id}''').fetchall():  # регистрация пользователя, если он еще не занесён в БД
         sql = '''INSERT INTO users(userid, username, name,  level, number_of_requests, number_of_bugs, date_of_registration, 
-        photo, nickname, language, change_language, last_scp) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'''
+        photo, nickname, language, last_scp) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'''
         data_tuple = (msg.from_user.id, msg.from_user.username, msg.from_user.first_name, 1, 0, 0,
                       date_time_str.replace(microsecond=0),
-                      'AgACAgIAAxkBAAIDd2JcUPUnu4OrqO59i9-M4FSRz3CmAALauDEbwQLoSo_J1EadLNMAAQEAAwIAA3MAAyQE',
-                      'EN', 'True',
-                      msg.from_user.username, 'None')
+                      'AgACAgIAAxkBAAIDd2JcUPUnu4OrqO59i9-M4FSRz3CmAALauDEbwQLoSo_J1EadLNMAAQEAAwIAA3MAAyQE', msg.from_user.username,
+                      'RU', 'None')
         cur.execute(sql, data_tuple)
         conn.commit()
 
@@ -107,6 +106,8 @@ async def lang(msg: types.Message):
     print(2)
     if argument in ('RU', 'EN'):
         print(3)
+        print(argument)
+        print(msg.from_user.id)
         cur.execute(f"""UPDATE users SET language = '{argument}' WHERE userid = {msg.from_user.id}""")
         print(4)
         language = cur.execute(f'''SELECT language FROM users WHERE userid = {msg.from_user.id}''').fetchall()[0][0]
@@ -207,6 +208,8 @@ async def with_puree(msg: types.Message):
         await bot.send_photo(msg.chat.id, info['img'])
         for x in range(0, len(info['text']), 4096):
             await bot.send_message(msg.chat.id, info['text'][x:x + 4096])
+            await bot.send_message(msg.chat.id, phrasebook['end_search'],
+                                   reply_markup=get_keyboard_search(num_SCP))
             print(1)
     else:
         await msg.reply('Ты не указали номер SCP')
