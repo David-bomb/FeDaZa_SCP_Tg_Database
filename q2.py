@@ -100,7 +100,8 @@ async def helper(msg: types.Message):  # Создание функции help
 @dp.callback_query_handler(Text(startswith="search_"),
                            state=States.STATE2_SEARCH)  # Обработка запросов инлайн кнопок поиска SCP
 async def callbacks_num(call: types.CallbackQuery):
-    global num_SCP
+    cur = conn.cursor()
+    num_SCP = cur.execute(f'''SELECT last_scp FROM users WHERE userid = {call.from_user.id}''').fetchall()[0][0]
     action = call.data.split("_")[1]
 
     if action == "front":  # Триггер нажатия на кнопку просмотра следующего SCP
@@ -173,7 +174,6 @@ async def with_puree(message: types.Message):
 @dp.message_handler(Text(equals="Поиск SCP"),
                     state=States.STATE1_WORK)  # Переход в статус получения номера SCP от пользователя
 async def with_puree(message: types.Message):
-    global num_SCP
     await message.reply("Введите номер SCP", reply_markup=greet_search)
     state = dp.current_state(user=message.from_user.id)
     await state.set_state(States.all()[1])  # Вот тут включается статус поиска
@@ -182,7 +182,8 @@ async def with_puree(message: types.Message):
 @dp.message_handler(Text(equals="Активировать протокол поиска"),
                     state=States.STATE2_SEARCH)  # После нажатия этой кнопки должна появиться информация об SCP
 async def with_puree(msg: types.Message):
-    global num_SCP
+    cur = conn.cursor()
+    num_SCP = cur.execute(f'''SELECT last_scp FROM users WHERE userid = {msg.from_user.id}''').fetchall()[0][0]
     if num_SCP:  # Проверка на то вводил ли пользователь вообще номер SCP
         await msg.reply(f"Я отчаянно пытаюсь найти информацию про SCP-{num_SCP}")
         argument = num_SCP  # Аргумент, то есть название объекта
@@ -283,9 +284,10 @@ async def echo_message(msg: types.Message):
 
 @dp.message_handler(state=States.STATE2_SEARCH)  # Заглушка для текстовых сообщений в режиме поиска SCP
 async def with_puree(message: types.Message):
-    global num_SCP
+    cur = conn.cursor()
     if message['text'].isdigit():
-        num_SCP = message['text']
+        cur.execute(f'''UPDATE users SET last_scp = {message['text']} WHERE userid = {message.from_user.id}''')
+        conn.commit()
         await message.reply("Верный ввод")
     else:
         await message.reply("Ошибка ввода!\n\nВведите номер SCP без лишних знаков")

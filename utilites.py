@@ -57,8 +57,9 @@ def browse(argument, id):
     retur = {'img': None, 'text': None}
     cur = m.conn.cursor()
     print('Ищу ошибку 1 - курсор-словарь')
-    cur.execute(f'''UPDATE users SET change_photo = 'False' WHERE userid = {id}''')  # TODO ОШИБКА
-    language = cur.execute(f'''SELECT language FROM users WHERE userid = {id}''').fetchall()[0][0]  # TODO ОШИБКА
+    cur.execute(f'''UPDATE users SET change_photo = 'False' WHERE userid = {id}''')
+    language = cur.execute(f'''SELECT language FROM users WHERE userid = {id}''').fetchall()[0][0]
+    cur.execute(f'''UPDATE users SET last_scp = {argument} WHERE userid = {id}''')
     print('Ищу ошибку 2 - запрос')
     if len(argument) < 3:
         argument = '0' * (3 - len(argument)) + argument
