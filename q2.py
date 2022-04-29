@@ -180,7 +180,7 @@ async def with_puree(message: types.Message):
 
 
 @dp.message_handler(Text(equals="Активировать протокол поиска"),
-                    state=States.STATE2_SEARCH)  # После нажатия этой кнопки должна появиться информация об SCP
+                    state=States.STATE2_SEARCH)  # После нажатия этой кнопки должна появиться информация об SCP объекте
 async def with_puree(msg: types.Message):
     cur = conn.cursor()
     num_SCP = cur.execute(f'''SELECT last_scp FROM users WHERE userid = {msg.from_user.id}''').fetchall()[0][0]
