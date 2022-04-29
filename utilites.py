@@ -1,5 +1,5 @@
 from aiogram import types
-import main as m
+import q2 as m
 from bs4 import BeautifulSoup
 import requests
 import logging
@@ -59,6 +59,7 @@ def browse(argument, id):
     print('Ищу ошибку 1 - курсор-словарь')
     language = cur.execute(f'''SELECT language FROM users WHERE userid = {id}''').fetchall()[0][0]
     cur.execute(f'''UPDATE users SET last_scp = {argument} WHERE userid = {id}''')
+    m.conn.commit()
     print('Ищу ошибку 2 - запрос')
     if len(argument) < 3:
         argument = '0' * (3 - len(argument)) + argument

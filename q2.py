@@ -2,7 +2,6 @@ import os
 from os.path import dirname, join
 import sqlite3
 from dotenv import load_dotenv
-from utilites import get_content, phrasebook, get_keyboard_search, get_keyboard_change
 import logging
 import requests
 from bs4 import BeautifulSoup
@@ -15,8 +14,8 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 from aiogram.utils.helper import Helper, HelperMode, ListItem
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.contrib.middlewares.logging import LoggingMiddleware
-from utilites import browse
 from language import languages
+import utilites as u
 
 # Создание бота, импорт токена из отдельного файла .env, установка логирования и соединения с БД
 
@@ -76,7 +75,7 @@ async def send_welcome(msg: types.Message):
         data_tuple = (msg.from_user.id, msg.from_user.username, msg.from_user.first_name, 1, 0, 0,
                       date_time_str.replace(microsecond=0),
                       'AgACAgIAAxkBAAIDd2JcUPUnu4OrqO59i9-M4FSRz3CmAALauDEbwQLoSo_J1EadLNMAAQEAAwIAA3MAAyQE', msg.from_user.username,
-                      'RU', 'None')
+                      'RU', 0)
         cur.execute(sql, data_tuple)
         conn.commit()
 
@@ -127,7 +126,7 @@ async def callbacks_num(call: types.CallbackQuery):
 
     if action == "front":  # Триггер нажатия на кнопку просмотра следующего SCP
         print('Вперед')
-        info = browse(f'{int(num_SCP) + 1}', call.message.chat.id)  # TODO ERROR
+        info = u.browse(f'{int(num_SCP) + 1}', call.message.chat.id)  # TODO ERROR
         print(1)
         print(info['text'])
         await bot.send_photo(call.message.chat.id, info['img'])
@@ -145,7 +144,7 @@ async def callbacks_num(call: types.CallbackQuery):
 
     elif action == "behind":  # Триггер нажатия на кнопку просмотра предыдущего SCP
         print('Назад')
-        info = browse(f'{int(num_SCP) - 1}', call.message.chat.id)
+        info = u.browse(f'{int(num_SCP) - 1}', call.message.chat.id)
         print(info['text'])
         await bot.send_photo(call.message.chat.id, info['img'])
         for x in range(0, len(info['text']), 4096):
@@ -181,7 +180,7 @@ async def with_puree(msg: types.Message):
     await bot.send_message(msg.chat.id,
                            f'Имя: {profile[0][8]}.\nДата регистрации: {profile[0][6]}.\nКоличество запросов: {profile[0][4]}.\n'
                            f'Уровень {profile[0][3]}.\n \nЧтобы повысить уровень делайте больше запросов',
-                           reply_markup=get_keyboard_change())
+                           reply_markup=u.get_keyboard_change())
 
 
 @dp.message_handler(Text(equals="Меню"), state=States.all())  # Выводим меню пользователю
@@ -205,12 +204,12 @@ async def with_puree(msg: types.Message):
     cur = conn.cursor()
     num_SCP = cur.execute(f'''SELECT last_scp FROM users WHERE userid = {msg.from_user.id}''').fetchall()[0][0]
     if num_SCP:  # Проверка на то вводил ли пользователь вообще номер SCP
-        info = browse(f'{num_SCP}', msg.chat.id)
+        info = u.browse(f'{num_SCP}', msg.chat.id)
         await bot.send_photo(msg.chat.id, info['img'])
         for x in range(0, len(info['text']), 4096):
             await bot.send_message(msg.chat.id, info['text'][x:x + 4096])
-            await bot.send_message(msg.chat.id, phrasebook['end_search'],
-                                   reply_markup=get_keyboard_search(num_SCP))
+            await bot.send_message(msg.chat.id, u.phrasebook['end_search'],
+                                   reply_markup=u.get_keyboard_search(num_SCP))
             print(1)
     else:
         await msg.reply('Ты не указали номер SCP')
