@@ -16,6 +16,7 @@ from aiogram.utils.helper import Helper, HelperMode, ListItem
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.contrib.middlewares.logging import LoggingMiddleware
 from utilites import browse
+from language import languages
 
 # Создание бота, импорт токена из отдельного файла .env, установка логирования и соединения с БД
 
@@ -71,11 +72,12 @@ async def send_welcome(msg: types.Message):
     if not cur.execute(
             f'''SELECT * FROM users WHERE userid = {msg.from_user.id}''').fetchall():  # регистрация пользователя, если он еще не занесён в БД
         sql = '''INSERT INTO users(userid, username, name,  level, number_of_requests, number_of_bugs, date_of_registration, 
-        photo, nickname) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)'''
+        photo, nickname, language, change_language, last_scp) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'''
         data_tuple = (msg.from_user.id, msg.from_user.username, msg.from_user.first_name, 1, 0, 0,
                       date_time_str.replace(microsecond=0),
                       'AgACAgIAAxkBAAIDd2JcUPUnu4OrqO59i9-M4FSRz3CmAALauDEbwQLoSo_J1EadLNMAAQEAAwIAA3MAAyQE',
-                      msg.from_user.username)
+                      'EN', 'True',
+                      msg.from_user.username, 'None')
         cur.execute(sql, data_tuple)
         conn.commit()
 
@@ -95,6 +97,23 @@ async def helper(msg: types.Message):  # Создание функции help
     await msg.reply(
         'Здесь вы можете найти полный архив SCP Foundation\n \n \n/browse *номер объекта* - для поиска статьи об объекте введите \n'
         '/profile - для просмотра профиля введите \n \nПо всем вопросам обращайтесь @vardabomb')
+
+
+@dp.message_handler(commands=['change_language'], state=States.all())
+async def lang(msg: types.Message):
+    print(1)
+    argument = msg.get_args()
+    cur = conn.cursor()
+    print(2)
+    if argument in ('RU', 'EN'):
+        print(3)
+        cur.execute(f"""UPDATE users SET language = '{argument}' WHERE userid = {msg.from_user.id}""")
+        print(4)
+        language = cur.execute(f'''SELECT language FROM users WHERE userid = {msg.from_user.id}''').fetchall()[0][0]
+        print(5)
+        conn.commit()
+        await msg.answer(text=languages['Successfully'][language] + '👍')
+        print(6)
 
 
 @dp.callback_query_handler(Text(startswith="search_"),
@@ -120,7 +139,6 @@ async def callbacks_num(call: types.CallbackQuery):
         state = dp.current_state(user=call.from_user.id)
         await state.set_state(States.all()[0])
         await bot.send_message(call.message.chat.id, 'И вот вы снова в меню', reply_markup=markup_menu)
-        num_SCP = ''
         await call.answer()
 
     elif action == "behind":  # Триггер нажатия на кнопку просмотра предыдущего SCP
@@ -185,66 +203,11 @@ async def with_puree(msg: types.Message):
     cur = conn.cursor()
     num_SCP = cur.execute(f'''SELECT last_scp FROM users WHERE userid = {msg.from_user.id}''').fetchall()[0][0]
     if num_SCP:  # Проверка на то вводил ли пользователь вообще номер SCP
-        await msg.reply(f"Я отчаянно пытаюсь найти информацию про SCP-{num_SCP}")
-        argument = num_SCP  # Аргумент, то есть название объекта
-        if len(argument) < 3:
-            argument = '0' * (3 - len(argument)) + argument
-            num_SCP = argument
-        try:  # Пытаемся найти этот объект, в противном случае пишем что не нашли
-            info = get_content(f'http://scp-ru.wikidot.com/scp-{argument}', id='page-title') + '\n' + \
-                   get_content(f'http://scp-ru.wikidot.com/scp-{argument}')  # Создаём ответ бота
-            text = requests.get(f'http://scp-ru.wikidot.com/scp-{argument}').text
-            try:
-                await bot.send_photo(msg.chat.id,
-                                     BeautifulSoup(text, 'html.parser').find(class_="rimg").find(class_="image").get(
-                                         'src'))
-            except:
-                await bot.send_photo(msg.chat.id,
-                                     'AgACAgIAAxkBAAIDd2JcUPUnu4OrqO59i9-M4FSRz3CmAALauDEbwQLoSo_J1EadLNMAAQEAAwIAA3MAAyQE')
-            if len(
-                    info) > 4096:  # Если он слишком большой, то мы делим его на несколько сообщений для обхода ограничений Telegram
-                for x in range(0, len(info), 4096):
-                    await bot.send_message(msg.chat.id, info[x:x + 4096])
-                await bot.send_message(msg.chat.id, phrasebook['end_search'],
-                                       reply_markup=get_keyboard_search(argument))
-            else:
-                await bot.send_message(msg.chat.id, info)
-                await bot.send_message(msg.chat.id, phrasebook['end_search'],
-                                       reply_markup=get_keyboard_search(argument))
-            cur = conn.cursor()
-            cur.execute(
-                f'''UPDATE users SET number_of_requests = number_of_requests + 1 WHERE userid = {msg.from_user.id}''')
-            requests_n = cur.execute(
-                f'''SELECT number_of_requests FROM users WHERE userid = {msg.from_user.id}''').fetchall()
-            lvl = cur.execute(f'''SELECT level FROM users WHERE userid = {msg.from_user.id}''').fetchall()
-            requests_n = int(requests_n[0][0])
-            lvl = int(lvl[0][0])
-            if lvl < 2 and requests_n >= 125:
-                cur.execute(
-                    f"""UPDATE users SET level = '2' WHERE userid = {msg.from_user.id}""")
-            elif lvl < 3 and requests_n >= 225:
-                cur.execute(
-                    f"""UPDATE users SET level = '3' WHERE userid = {msg.from_user.id}""")
-            elif lvl < 4 and requests_n >= 350:
-                cur.execute(
-                    f"""UPDATE users SET level = '4' WHERE userid = {msg.from_user.id}""")
-            elif lvl < 5 and requests_n >= 500:
-                cur.execute(
-                    f"""UPDATE users SET level = '5' WHERE userid = {msg.from_user.id}""")
-            elif lvl < 6 and requests_n >= 675:
-                cur.execute(
-                    f"""UPDATE users SET level = '6' WHERE userid = {msg.from_user.id}""")
-            elif requests_n >= 900:
-                cur.execute(
-                    f"""UPDATE users SET level = '7' WHERE userid = {msg.from_user.id}""")
-            conn.commit()  # Прибавляем 1 к кол-ву запросов, для отслеживания прогресса уровня
-        except Exception as e:  # Запись ошибки в лог, если пользователь столкнулся с ошибкой разряда ERROR или FATAL, возможно появление логов от самого aiogram
-            logging.error(' '.join([str(msg.from_user.id), msg.from_user.username, str(e)]))
-            cur = conn.cursor()
-            cur.execute(  # Фиксирование ошибки и прикрепление ошибки к пользователю, для возможного опроса в будущем
-                f'''UPDATE users SET number_of_bugs = number_of_bugs + 1 WHERE userid = {msg.from_user.id}''')
-            conn.commit()
-            await msg.reply('Я всё обыскал, нигде не нашёл того, чего вы хотели, или же я допустил ошибку.')
+        info = browse(f'{num_SCP}', msg.chat.id)
+        await bot.send_photo(msg.chat.id, info['img'])
+        for x in range(0, len(info['text']), 4096):
+            await bot.send_message(msg.chat.id, info['text'][x:x + 4096])
+            print(1)
     else:
         await msg.reply('Ты не указали номер SCP')
 
@@ -279,7 +242,7 @@ async def edit_photo(msg: types.Message):
 
 @dp.message_handler()  # Заглушка для без статусного ввода
 async def echo_message(msg: types.Message):
-    await bot.send_message(msg.from_user.id, msg.text)
+    await bot.send_message(msg.from_user.id, 'Необходимо перезапусить бота с помощью /start')
 
 
 @dp.message_handler(state=States.STATE2_SEARCH)  # Заглушка для текстовых сообщений в режиме поиска SCP

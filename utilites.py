@@ -57,7 +57,6 @@ def browse(argument, id):
     retur = {'img': None, 'text': None}
     cur = m.conn.cursor()
     print('Ищу ошибку 1 - курсор-словарь')
-    cur.execute(f'''UPDATE users SET change_photo = 'False' WHERE userid = {id}''')
     language = cur.execute(f'''SELECT language FROM users WHERE userid = {id}''').fetchall()[0][0]
     cur.execute(f'''UPDATE users SET last_scp = {argument} WHERE userid = {id}''')
     print('Ищу ошибку 2 - запрос')
@@ -66,14 +65,16 @@ def browse(argument, id):
     if argument:  # проверяем, ввели ли аргумент
         print('Ищу ошибку 3 нарезка-аргумент')
         try:  # Пытаемся найти этот объект, в противном случае пишем что не нашли
+            print('Ищу ошибку 4 try')
             browse = {
                 'RU': f'http://scp-ru.wikidot.com/scp-{argument}',
                 'EN': f'https://scp-wiki.wikidot.com/scp-{argument}'
             }
-            print(browse[language])
+            print('debug')
             info = get_content(browse[language], id='page-title') + '\n' + \
                    get_content(browse[language])  # Создаём ответ бота
             text = requests.get(browse[language]).text
+            print('Ищу ошибку 6 - создание инфы')
             try:
                 if language == 'RU':
                     retur['img'] = BeautifulSoup(text, 'html.parser').find(class_="rimg").find(
@@ -82,8 +83,8 @@ def browse(argument, id):
                 elif language == 'EN':
                     retur['img'] = BeautifulSoup(text, 'html.parser').find(
                         class_="scp-image-block block-right").find(class_="image").get('src')
-                print('4', 'retur', sep=';')
             except:
+                print('Ищу Ошибку 5 - except')
                 retur['img'] = 'AgACAgIAAxkBAAIDd2JcUPUnu4OrqO59i9-M4FSRz3CmAALauDEbwQLoSo_J1EadLNMAAQEAAwIAA3MAAyQE'
             retur['text'] = info
             return retur
