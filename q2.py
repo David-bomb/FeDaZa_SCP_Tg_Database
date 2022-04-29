@@ -108,11 +108,12 @@ async def lang(msg: types.Message):
         print(3)
         print(argument)
         print(msg.from_user.id)
+        print(f"""UPDATE users SET language = '{argument}' WHERE userid = {msg.from_user.id}""")
         cur.execute(f"""UPDATE users SET language = '{argument}' WHERE userid = {msg.from_user.id}""")
+        conn.commit()
         print(4)
         language = cur.execute(f'''SELECT language FROM users WHERE userid = {msg.from_user.id}''').fetchall()[0][0]
         print(5)
-        conn.commit()
         await msg.answer(text=languages['Successfully'][language] + '👍')
         print(6)
 

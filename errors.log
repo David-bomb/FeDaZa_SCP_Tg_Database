@@ -1,571 +1,5 @@
-2022-04-29 21:13:18,258 ERROR root 855707706 kurakura222 database is locked
-2022-04-29 21:13:23,779 ERROR asyncio Task exception was never retrieved
-future: <Task finished name='Task-263' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('database is locked')>
-Traceback (most recent call last):
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 214, in with_puree
-    cur.execute(
-sqlite3.OperationalError: database is locked
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 243, in with_puree
-    cur.execute(  # Фиксирование ошибки и прикрепление ошибки к пользователю, для возможного опроса в будущем
-sqlite3.OperationalError: database is locked
-2022-04-29 21:14:05,899 ERROR root 971934495 vardabomb database is locked
-2022-04-29 21:14:11,422 ERROR asyncio Task exception was never retrieved
-future: <Task finished name='Task-303' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('database is locked')>
-Traceback (most recent call last):
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 214, in with_puree
-    cur.execute(
-sqlite3.OperationalError: database is locked
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 243, in with_puree
-    cur.execute(  # Фиксирование ошибки и прикрепление ошибки к пользователю, для возможного опроса в будущем
-sqlite3.OperationalError: database is locked
-2022-04-29 21:44:40,355 ERROR asyncio Task exception was never retrieved
-future: <Task finished name='Task-20' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError('can only concatenate str (not "list") to str')>
-Traceback (most recent call last):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 191, in with_puree
-    argument = '0' * (3 - len(argument)) + argument
-TypeError: can only concatenate str (not "list") to str
-2022-04-29 21:45:39,400 ERROR asyncio Task exception was never retrieved
-future: <Task finished name='Task-24' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError('can only concatenate str (not "list") to str')>
-Traceback (most recent call last):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 191, in with_puree
-    argument = '0' * (3 - len(argument)) + argument
-TypeError: can only concatenate str (not "list") to str
-2022-04-29 21:46:31,813 ERROR asyncio Task exception was never retrieved
-future: <Task finished name='Task-26' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError('can only concatenate str (not "list") to str')>
-Traceback (most recent call last):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 191, in with_puree
-    argument = '0' * (3 - len(argument)) + argument
-TypeError: can only concatenate str (not "list") to str
-2022-04-29 21:47:20,539 ERROR asyncio Task exception was never retrieved
-future: <Task finished name='Task-20' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError('can only concatenate str (not "tuple") to str')>
-Traceback (most recent call last):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 191, in with_puree
-    argument = '0' * (3 - len(argument)) + argument
-TypeError: can only concatenate str (not "tuple") to str
-2022-04-29 23:14:39,253 ERROR asyncio Task exception was never retrieved
-future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('no such table: users')>
-Traceback (most recent call last):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 71, in send_welcome
-    if not cur.execute(
-sqlite3.OperationalError: no such table: users
-2022-04-29 23:14:45,536 ERROR asyncio Task exception was never retrieved
-future: <Task finished name='Task-11' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('no such table: users')>
-Traceback (most recent call last):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 158, in with_puree
-    profile = cur.execute(f'''SELECT * FROM users WHERE userid = {msg.from_user.id}''').fetchall()
-sqlite3.OperationalError: no such table: users
-2022-04-29 23:17:12,761 ERROR asyncio Task exception was never retrieved
-future: <Task finished name='Task-80' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('no such column: change_photo')>
-Traceback (most recent call last):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in process_update
-    return await self.callback_query_handlers.notify(update.callback_query)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 109, in callbacks_num
-    info = browse(f'{int(num_SCP) + 1}', call.message.chat.id)  # TODO ERROR
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\utilites.py", line 60, in browse
-    cur.execute(f'''UPDATE users SET change_photo = 'False' WHERE userid = {id}''')
-sqlite3.OperationalError: no such column: change_photo
-2022-04-29 23:23:20,383 ERROR asyncio Task exception was never retrieved
-future: <Task finished name='Task-49' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('no such column: change_photo')>
-Traceback (most recent call last):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in process_update
-    return await self.callback_query_handlers.notify(update.callback_query)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 128, in callbacks_num
-    info = browse(f'{int(num_SCP) - 1}', call.message.chat.id)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\utilites.py", line 60, in browse
-    cur.execute(f'''UPDATE users SET change_photo = 'False' WHERE userid = {id}''')
-sqlite3.OperationalError: no such column: change_photo
-2022-04-29 23:24:30,267 ERROR root None
-2022-04-29 23:24:30,267 ERROR asyncio Task exception was never retrieved
-future: <Task finished name='Task-35' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('near ")": syntax error')>
-Traceback (most recent call last):
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\utilites.py", line 72, in browse
-    print(browse[language])
-KeyError: None
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in process_update
-    return await self.callback_query_handlers.notify(update.callback_query)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 109, in callbacks_num
-    info = browse(f'{int(num_SCP) + 1}', call.message.chat.id)  # TODO ERROR
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\utilites.py", line 92, in browse
-    cur.execute(  # Фиксирование ошибки и прикрепление ошибки к пользователю, для возможного опроса в будущем
-sqlite3.OperationalError: near ")": syntax error
-2022-04-29 23:26:02,570 ERROR root None
-2022-04-29 23:26:02,571 ERROR asyncio Task exception was never retrieved
-future: <Task finished name='Task-39' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('near ")": syntax error')>
-Traceback (most recent call last):
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\utilites.py", line 72, in browse
-    print(browse[language])
-KeyError: None
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in process_update
-    return await self.callback_query_handlers.notify(update.callback_query)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 109, in callbacks_num
-    info = browse(f'{int(num_SCP) + 1}', call.message.chat.id)  # TODO ERROR
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\utilites.py", line 92, in browse
-    cur.execute(  # Фиксирование ошибки и прикрепление ошибки к пользователю, для возможного опроса в будущем
-sqlite3.OperationalError: near ")": syntax error
-2022-04-29 23:27:11,445 ERROR root None
-2022-04-29 23:27:11,446 ERROR asyncio Task exception was never retrieved
-future: <Task finished name='Task-27' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('near ")": syntax error')>
-Traceback (most recent call last):
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\utilites.py", line 73, in browse
-    print(browse[language])
-KeyError: None
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in process_update
-    return await self.callback_query_handlers.notify(update.callback_query)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 109, in callbacks_num
-    info = browse(f'{int(num_SCP) + 1}', call.message.chat.id)  # TODO ERROR
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\utilites.py", line 94, in browse
-    cur.execute(  # Фиксирование ошибки и прикрепление ошибки к пользователю, для возможного опроса в будущем
-sqlite3.OperationalError: near ")": syntax error
-2022-04-29 23:29:54,367 ERROR root None
-2022-04-29 23:29:54,368 ERROR asyncio Task exception was never retrieved
-future: <Task finished name='Task-27' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('near ")": syntax error')>
-Traceback (most recent call last):
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\utilites.py", line 73, in browse
-    print(browse[language])
-KeyError: None
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in process_update
-    return await self.callback_query_handlers.notify(update.callback_query)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 109, in callbacks_num
-    info = browse(f'{int(num_SCP) + 1}', call.message.chat.id)  # TODO ERROR
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\utilites.py", line 96, in browse
-    cur.execute(  # Фиксирование ошибки и прикрепление ошибки к пользователю, для возможного опроса в будущем
-sqlite3.OperationalError: near ")": syntax error
-2022-04-29 23:34:55,710 ERROR root None
-2022-04-29 23:34:55,710 ERROR asyncio Task exception was never retrieved
-future: <Task finished name='Task-20' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('near ")": syntax error')>
-Traceback (most recent call last):
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\utilites.py", line 73, in browse
-    print(browse[language])
-KeyError: None
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 187, in with_puree
-    info = browse(f'{num_SCP}', msg.chat.id)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\utilites.py", line 96, in browse
-    cur.execute(  # Фиксирование ошибки и прикрепление ошибки к пользователю, для возможного опроса в будущем
-sqlite3.OperationalError: near ")": syntax error
-2022-04-29 23:35:15,487 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
-Traceback (most recent call last):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
-    updates = await self.bot.get_updates(
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
-    result = await self.request(api.Methods.GET_UPDATES, payload)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\bot\base.py", line 231, in request
-    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
-    return check_result(method, response.content_type, response.status, await response.text())
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
-    exceptions.ConflictError.detect(description)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
-    raise err(cls.text or description)
-aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
-2022-04-29 23:35:26,764 ERROR aiogram.dispatcher.dispatcher Cause exception while getting updates.
-Traceback (most recent call last):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
-    updates = await self.bot.get_updates(
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
-    result = await self.request(api.Methods.GET_UPDATES, payload)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\bot\base.py", line 231, in request
-    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
-    return check_result(method, response.content_type, response.status, await response.text())
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\bot\api.py", line 119, in check_result
-    exceptions.ConflictError.detect(description)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
-    raise err(cls.text or description)
-aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
-2022-04-29 23:37:08,228 ERROR root None
-2022-04-29 23:37:08,229 ERROR asyncio Task exception was never retrieved
-future: <Task finished name='Task-23' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('near ")": syntax error')>
-Traceback (most recent call last):
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\utilites.py", line 74, in browse
-    print(browse[language])
-KeyError: None
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 187, in with_puree
-    info = browse(f'{num_SCP}', msg.chat.id)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\utilites.py", line 97, in browse
-    cur.execute(  # Фиксирование ошибки и прикрепление ошибки к пользователю, для возможного опроса в будущем
-sqlite3.OperationalError: near ")": syntax error
-2022-04-29 23:37:53,998 ERROR root None
-2022-04-29 23:37:53,998 ERROR asyncio Task exception was never retrieved
-future: <Task finished name='Task-19' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('near ")": syntax error')>
-Traceback (most recent call last):
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\utilites.py", line 73, in browse
-    print(browse[language], 12)
-KeyError: None
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 187, in with_puree
-    info = browse(f'{num_SCP}', msg.chat.id)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\utilites.py", line 96, in browse
-    cur.execute(  # Фиксирование ошибки и прикрепление ошибки к пользователю, для возможного опроса в будущем
-sqlite3.OperationalError: near ")": syntax error
-2022-04-29 23:38:30,538 ERROR root None
-2022-04-29 23:38:30,538 ERROR asyncio Task exception was never retrieved
-future: <Task finished name='Task-20' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('near ")": syntax error')>
-Traceback (most recent call last):
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\utilites.py", line 74, in browse
-    print(browse[language], 12)
-KeyError: None
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 187, in with_puree
-    info = browse(f'{num_SCP}', msg.chat.id)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\utilites.py", line 97, in browse
-    cur.execute(  # Фиксирование ошибки и прикрепление ошибки к пользователю, для возможного опроса в будущем
-sqlite3.OperationalError: near ")": syntax error
-2022-04-29 23:39:05,579 ERROR root None
-2022-04-29 23:39:05,580 ERROR asyncio Task exception was never retrieved
-future: <Task finished name='Task-20' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('near ")": syntax error')>
-Traceback (most recent call last):
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\utilites.py", line 74, in browse
-    info = get_content(browse[language], id='page-title') + '\n' + \
-KeyError: None
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 187, in with_puree
-    info = browse(f'{num_SCP}', msg.chat.id)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\utilites.py", line 96, in browse
-    cur.execute(  # Фиксирование ошибки и прикрепление ошибки к пользователю, для возможного опроса в будущем
-sqlite3.OperationalError: near ")": syntax error
-2022-04-29 23:46:32,292 ERROR asyncio Task exception was never retrieved
-future: <Task finished name='Task-11' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('no such column: change_photo')>
-Traceback (most recent call last):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 107, in helper
-    cur.execute(f'''UPDATE users SET change_photo = 'False' WHERE userid = {msg.from_user.id}''')
-sqlite3.OperationalError: no such column: change_photo
-2022-04-29 23:50:08,025 ERROR asyncio Task exception was never retrieved
-future: <Task finished name='Task-24' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=BadRequest('There is no photo in the request')>
-Traceback (most recent call last):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 207, in with_puree
-    await bot.send_photo(msg.chat.id, info['img'])
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\bot\bot.py", line 527, in send_photo
-    result = await self.request(api.Methods.SEND_PHOTO, payload, files)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\bot\base.py", line 231, in request
-    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
-    return check_result(method, response.content_type, response.status, await response.text())
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
-    exceptions.BadRequest.detect(description)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
-    raise cls(description)
-aiogram.utils.exceptions.BadRequest: There is no photo in the request
-2022-04-29 23:51:58,775 ERROR asyncio Task exception was never retrieved
-future: <Task finished name='Task-29' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('database is locked')>
-Traceback (most recent call last):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 110, in lang
-    cur.execute(f"""UPDATE users SET language = '{argument}' WHERE userid = {msg.from_user.id}""")
-sqlite3.OperationalError: database is locked
-2022-04-29 23:52:46,213 ERROR asyncio Task exception was never retrieved
-future: <Task finished name='Task-34' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('database is locked')>
-Traceback (most recent call last):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 110, in lang
-    cur.execute(f"""UPDATE users SET language = '{argument}' WHERE userid = {msg.from_user.id}""")
-sqlite3.OperationalError: database is locked
-2022-04-29 23:59:43,978 ERROR asyncio Task exception was never retrieved
-future: <Task finished name='Task-64' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('database is locked')>
-Traceback (most recent call last):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 110, in lang
-    cur.execute(f"""UPDATE users SET language = '{argument}' WHERE userid = {msg.from_user.id}""")
-sqlite3.OperationalError: database is locked
-2022-04-30 00:01:29,251 ERROR asyncio Task exception was never retrieved
-future: <Task finished name='Task-44' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('database is locked')>
-Traceback (most recent call last):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 254, in with_puree
-    cur.execute(f'''UPDATE users SET last_scp = {message['text']} WHERE userid = {message.from_user.id}''')
-sqlite3.OperationalError: database is locked
-2022-04-30 00:01:34,805 ERROR asyncio Task exception was never retrieved
-future: <Task finished name='Task-60' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('database is locked')>
-Traceback (most recent call last):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 254, in with_puree
-    cur.execute(f'''UPDATE users SET last_scp = {message['text']} WHERE userid = {message.from_user.id}''')
-sqlite3.OperationalError: database is locked
-2022-04-30 00:01:51,058 ERROR asyncio Task exception was never retrieved
-future: <Task finished name='Task-63' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('database is locked')>
+2022-04-30 00:33:38,644 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-72' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('database is locked')>
 Traceback (most recent call last):
   File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
     for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
@@ -580,8 +14,8 @@ Traceback (most recent call last):
   File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 112, in lang
     cur.execute(f"""UPDATE users SET language = '{argument}' WHERE userid = {msg.from_user.id}""")
 sqlite3.OperationalError: database is locked
-2022-04-30 00:15:07,271 ERROR asyncio Task exception was never retrieved
-future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=ProgrammingError('Incorrect number of bindings supplied. The current statement uses 12, and there are 13 supplied.')>
+2022-04-30 00:33:50,807 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-75' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('database is locked')>
 Traceback (most recent call last):
   File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
     for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
@@ -593,27 +27,11 @@ Traceback (most recent call last):
     return await self.message_handlers.notify(update.message)
   File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
     response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 81, in send_welcome
-    cur.execute(sql, data_tuple)
-sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 12, and there are 13 supplied.
-2022-04-30 00:22:19,658 ERROR asyncio Task exception was never retrieved
-future: <Task finished name='Task-96' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('database is locked')>
-Traceback (most recent call last):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 111, in lang
+  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 112, in lang
     cur.execute(f"""UPDATE users SET language = '{argument}' WHERE userid = {msg.from_user.id}""")
 sqlite3.OperationalError: database is locked
-2022-04-30 00:24:01,014 ERROR asyncio Task exception was never retrieved
-future: <Task finished name='Task-26' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('no such column: RU')>
+2022-04-30 00:34:45,500 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-92' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('database is locked')>
 Traceback (most recent call last):
   File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
     for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
@@ -625,6 +43,86 @@ Traceback (most recent call last):
     return await self.message_handlers.notify(update.message)
   File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
     response = await handler_obj.handler(*args, **partial_data)
-  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 111, in lang
-    cur.execute(f"""UPDATE users SET language = {argument} WHERE userid = {msg.from_user.id}""")
-sqlite3.OperationalError: no such column: RU
+  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 236, in edit_photo
+    cur.execute(f"""UPDATE users SET photo = '{file_info.file_id}' WHERE userid = {msg.from_user.id}""")
+sqlite3.OperationalError: database is locked
+2022-04-30 00:36:57,323 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-79' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('database is locked')>
+Traceback (most recent call last):
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 112, in lang
+    cur.execute(f"""UPDATE users SET language = '{argument}' WHERE userid = {msg.from_user.id}""")
+sqlite3.OperationalError: database is locked
+2022-04-30 00:43:36,879 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-82' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('database is locked')>
+Traceback (most recent call last):
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 112, in lang
+    cur.execute(f"""UPDATE users SET language = '{argument}' WHERE userid = {msg.from_user.id}""")
+sqlite3.OperationalError: database is locked
+2022-04-30 00:45:20,161 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-26' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('database is locked')>
+Traceback (most recent call last):
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 112, in lang
+    cur.execute(f"""UPDATE users SET language = '{argument}' WHERE userid = {msg.from_user.id}""")
+sqlite3.OperationalError: database is locked
+2022-04-30 00:48:44,115 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-40' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('database is locked')>
+Traceback (most recent call last):
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 115, in lang
+    cur.execute(f"""UPDATE users SET language = '{argument}' WHERE userid = {msg.from_user.id}""")
+sqlite3.OperationalError: database is locked
+2022-04-30 00:50:16,245 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-32' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('database is locked')>
+Traceback (most recent call last):
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 112, in lang
+    cur.execute(f"""UPDATE users SET language = '{argument}' WHERE userid = {msg.from_user.id}""")
+sqlite3.OperationalError: database is locked
