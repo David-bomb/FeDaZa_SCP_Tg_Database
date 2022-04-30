@@ -16,5 +16,3 @@ cur.execute("""CREATE TABLE IF NOT EXISTS users(
    language TEXT,
    last_scp INTEGER)
 """)
-# Создается БД с колонками: id пользователя, "тэг" пользователя в telegram, имя,
-# уровень, кол-во запросов, кол-во вызванных ошибок (чтобы беседовать с проказниками)

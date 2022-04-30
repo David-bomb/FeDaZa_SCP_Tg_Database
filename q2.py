@@ -3,8 +3,6 @@ from os.path import dirname, join
 import sqlite3
 from dotenv import load_dotenv
 import logging
-import requests
-from bs4 import BeautifulSoup
 from datetime import datetime
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
@@ -208,9 +206,8 @@ async def with_puree(msg: types.Message):
         await bot.send_photo(msg.chat.id, info['img'])
         for x in range(0, len(info['text']), 4096):
             await bot.send_message(msg.chat.id, info['text'][x:x + 4096])
-            await bot.send_message(msg.chat.id, u.phrasebook['end_search'],
-                                   reply_markup=u.get_keyboard_search(num_SCP))
-            print(1)
+        await bot.send_message(msg.chat.id, u.phrasebook['end_search'],
+                               reply_markup=u.get_keyboard_search(num_SCP))
     else:
         await msg.reply('Ты не указали номер SCP')
 
