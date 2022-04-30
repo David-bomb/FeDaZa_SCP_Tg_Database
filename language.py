@@ -25,4 +25,8 @@ languages = {
     'error_in_typing': {
         'RU': f'Архив не может обработать данный тип информации, используйте команды.',
         'EN': f'Cannot archive this type of information, tag the command.'
-    }, }
+    },
+    'lang_no_arg': {
+        'RU': 'Вы не указали язык.',
+        'EN': 'You did not mention language.'
+    }}

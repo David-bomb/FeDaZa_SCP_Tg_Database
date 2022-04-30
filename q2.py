@@ -49,11 +49,11 @@ markup_profile = ReplyKeyboardMarkup(resize_keyboard=True).row(button_menu).add(
 
 class States(Helper):
     mode = HelperMode.snake_case
-    STATE_WORK = ListItem()  # Уровень для работы с ботом
-    STATE_SEARCH = ListItem()  # Уровень для ввода номера SCP объекта
+    STATE1_WORK = ListItem()  # Уровень для работы с ботом
+    STATE2_SEARCH = ListItem()  # Уровень для ввода номера SCP объекта
 
-    STATE_PHOTO = ListItem()  # Уровень для смены фото
-    STATE_NAME = ListItem()  # Уровень для смены ника и фото
+    STATE4_PHOTO = ListItem()  # Уровень для смены фото
+    STATE5_NAME = ListItem()  # Уровень для смены ника и фото
 
 
 @dp.message_handler(commands=['start'])  # Первый старт, регистрирует пользователя и выдает статус
@@ -78,11 +78,11 @@ async def send_welcome(msg: types.Message):
         conn.commit()
 
 
-@dp.message_handler(commands=['restart'], state=States.all())  # Перезагрузка статуса бота
+@dp.message_handler(commands=['start'], state=States.all())  # Перезагрузка статуса бота
 async def send_welcome(msg: types.Message):
     state = dp.current_state(user=msg.from_user.id)
     await state.set_state(States.all()[0])
-    await msg.reply(f'{msg.from_user.first_name}, поисковик перепузащен.',
+    await msg.reply(f'{msg.from_user.first_name}, поисковик перепущен.',
                     reply_markup=markup_menu)
 
 
@@ -100,6 +100,7 @@ async def lang(msg: types.Message):
     print(1)
     argument = msg.get_args()
     cur = conn.cursor()
+    language = cur.execute(f'''SELECT language FROM users WHERE userid = {msg.from_user.id}''').fetchall()[0][0]
     print(2)
     if argument in ('RU', 'EN'):
         print(3)
@@ -109,14 +110,15 @@ async def lang(msg: types.Message):
         cur.execute(f"""UPDATE users SET language = '{argument}' WHERE userid = {msg.from_user.id}""")
         conn.commit()
         print(4)
-        language = cur.execute(f'''SELECT language FROM users WHERE userid = {msg.from_user.id}''').fetchall()[0][0]
         print(5)
         await msg.answer(text=languages['Successfully'][language] + '👍')
         print(6)
+    else:
+        await msg.answer(languages['lang_no_arg'][language])
 
 
 @dp.callback_query_handler(Text(startswith="search_"),
-                           state=States.STATE_SEARCH)  # Обработка запросов инлайн кнопок поиска SCP
+                           state=States.STATE2_SEARCH)  # Обработка запросов инлайн кнопок поиска SCP
 async def callbacks_num(call: types.CallbackQuery):
     cur = conn.cursor()
     num_SCP = cur.execute(f'''SELECT last_scp FROM users WHERE userid = {call.from_user.id}''').fetchall()[0][0]
@@ -152,7 +154,7 @@ async def callbacks_num(call: types.CallbackQuery):
 
 
 @dp.callback_query_handler(Text(startswith="change_"),
-                           state=States.STATE_WORK)  # Обработка запросов инлайн кнопок смены имени и фото
+                           state=States.STATE1_WORK)  # Обработка запросов инлайн кнопок смены имени и фото
 async def callbacks_num(call: types.CallbackQuery):
     action = call.data.split("_")[1]
     if action == "photo":  # Триггер нажатия на кнопку смены фото
@@ -168,7 +170,7 @@ async def callbacks_num(call: types.CallbackQuery):
 
 
 @dp.message_handler(Text(equals="Мой профиль"),
-                    state=States.STATE_WORK | States.STATE_PHOTO)  # Выводим профиль пользователя
+                    state=States.STATE1_WORK | States.STATE4_PHOTO)  # Выводим профиль пользователя
 async def with_puree(msg: types.Message):
     await msg.reply("Это ваш профиль, любуйтесь", reply_markup=markup_profile)
     cur = conn.cursor()
@@ -189,7 +191,7 @@ async def with_puree(message: types.Message):
 
 
 @dp.message_handler(Text(equals="Поиск SCP"),
-                    state=States.STATE_WORK)  # Переход в статус получения номера SCP от пользователя
+                    state=States.STATE1_WORK)  # Переход в статус получения номера SCP от пользователя
 async def with_puree(message: types.Message):
     await message.reply("Введите номер SCP", reply_markup=greet_search)
     state = dp.current_state(user=message.from_user.id)
@@ -197,7 +199,7 @@ async def with_puree(message: types.Message):
 
 
 @dp.message_handler(Text(equals="Активировать протокол поиска"),
-                    state=States.STATE_SEARCH)  # После нажатия этой кнопки должна появиться информация об SCP объекте
+                    state=States.STATE2_SEARCH)  # После нажатия этой кнопки должна появиться информация об SCP объекте
 async def with_puree(msg: types.Message):
     cur = conn.cursor()
     num_SCP = cur.execute(f'''SELECT last_scp FROM users WHERE userid = {msg.from_user.id}''').fetchall()[0][0]
@@ -212,7 +214,7 @@ async def with_puree(msg: types.Message):
         await msg.reply('Вы не указали номер SCP')
 
 
-@dp.message_handler(state=States.STATE_NAME)  # Прием нового имени профиля и смена его в БД
+@dp.message_handler(state=States.STATE5_NAME)  # Прием нового имени профиля и смена его в БД
 async def get_text_messages(msg: types.Message):
     await msg.reply('C этого момента я буду звать вас ' + msg.text)
     cur = conn.cursor()
@@ -224,7 +226,7 @@ async def get_text_messages(msg: types.Message):
 
 
 @dp.message_handler(content_types=[types.ContentType.PHOTO],
-                    state=States.STATE_PHOTO)  # Прием нового Фото  профиляи смена его в БД
+                    state=States.STATE4_PHOTO)  # Прием нового Фото  профиляи смена его в БД
 async def edit_photo(msg: types.Message):
     document_id = msg.photo[0].file_id
     file_info = await bot.get_file(document_id)
@@ -235,17 +237,17 @@ async def edit_photo(msg: types.Message):
 
 
 @dp.message_handler(content_types=[types.ContentType.TEXT],
-                    state=States.STATE_PHOTO)  # Заглушка для текстовых сообщений в режиме смены фото
+                    state=States.STATE4_PHOTO)  # Заглушка для текстовых сообщений в режиме смены фото
 async def edit_photo(msg: types.Message):
     await msg.reply("Отправьте фото, либо вернитесь в профиль", reply_markup=return_profile)
 
 
 @dp.message_handler()  # Заглушка для без статусного ввода
 async def echo_message(msg: types.Message):
-    await bot.send_message(msg.from_user.id, 'Необходимо перезапусить бота с помощью /restart')
+    await bot.send_message(msg.from_user.id, 'Необходимо перезапусить бота с помощью /start')
 
 
-@dp.message_handler(state=States.STATE_SEARCH)  # Заглушка для текстовых сообщений в режиме поиска SCP
+@dp.message_handler(state=States.STATE2_SEARCH)  # Заглушка для текстовых сообщений в режиме поиска SCP
 async def with_puree(message: types.Message):
     cur = conn.cursor()
     if message['text'].isdigit():
@@ -257,7 +259,7 @@ async def with_puree(message: types.Message):
 
 
 @dp.message_handler(content_types=[types.ContentType.TEXT],
-                    state=States.STATE_WORK)  # Заглушка приема сообщения при 1 статусе
+                    state=States.STATE1_WORK)  # Заглушка приема сообщения при 1 статусе
 async def get_text_messages(msg: types.Message):
     await msg.reply(
         f'{msg.from_user.first_name}, архив не может обработать данный тип информации, используйте команды.')

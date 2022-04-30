@@ -126,3 +126,84 @@ Traceback (most recent call last):
   File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 112, in lang
     cur.execute(f"""UPDATE users SET language = '{argument}' WHERE userid = {msg.from_user.id}""")
 sqlite3.OperationalError: database is locked
+2022-04-30 13:22:26,954 ERROR root 'NoneType' object has no attribute 'text'
+2022-04-30 13:22:27,011 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-56' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=BadRequest('There is no photo in the request')>
+Traceback (most recent call last):
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 206, in with_puree
+    await bot.send_photo(msg.chat.id, info['img'])
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\bot\bot.py", line 527, in send_photo
+    result = await self.request(api.Methods.SEND_PHOTO, payload, files)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+aiogram.utils.exceptions.BadRequest: There is no photo in the request
+2022-04-30 13:22:44,507 ERROR root 'NoneType' object has no attribute 'text'
+2022-04-30 13:22:44,579 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-78' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=BadRequest('There is no photo in the request')>
+Traceback (most recent call last):
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 206, in with_puree
+    await bot.send_photo(msg.chat.id, info['img'])
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\bot\bot.py", line 527, in send_photo
+    result = await self.request(api.Methods.SEND_PHOTO, payload, files)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+aiogram.utils.exceptions.BadRequest: There is no photo in the request
+2022-04-30 13:23:48,222 ERROR root 'NoneType' object has no attribute 'text'
+2022-04-30 13:23:48,280 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-99' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=BadRequest('There is no photo in the request')>
+Traceback (most recent call last):
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 206, in with_puree
+    await bot.send_photo(msg.chat.id, info['img'])
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\bot\bot.py", line 527, in send_photo
+    result = await self.request(api.Methods.SEND_PHOTO, payload, files)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\bot\base.py", line 231, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+aiogram.utils.exceptions.BadRequest: There is no photo in the request
