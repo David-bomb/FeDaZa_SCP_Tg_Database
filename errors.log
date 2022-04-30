@@ -126,3 +126,55 @@ Traceback (most recent call last):
   File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 112, in lang
     cur.execute(f"""UPDATE users SET language = '{argument}' WHERE userid = {msg.from_user.id}""")
 sqlite3.OperationalError: database is locked
+2022-04-30 12:32:29,661 ERROR root near ")": syntax error
+2022-04-30 12:32:29,661 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-36' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('near ")": syntax error')>
+Traceback (most recent call last):
+  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\utilites.py", line 92, in browse
+    cur.execute(  # Фиксирование ошибки и прикрепление ошибки к пользователю, для возможного опроса в будущем
+sqlite3.OperationalError: near ")": syntax error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 205, in with_puree
+    info = u.browse(f'{num_SCP}', msg.chat.id)
+  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\utilites.py", line 99, in browse
+    cur.execute(  # Фиксирование ошибки и прикрепление ошибки к пользователю, для возможного опроса в будущем
+sqlite3.OperationalError: near ")": syntax error
+2022-04-30 12:32:48,548 ERROR root near ")": syntax error
+2022-04-30 12:32:48,548 ERROR asyncio Task exception was never retrieved
+future: <Task finished name='Task-58' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('near ")": syntax error')>
+Traceback (most recent call last):
+  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\utilites.py", line 92, in browse
+    cur.execute(  # Фиксирование ошибки и прикрепление ошибки к пользователю, для возможного опроса в будущем
+sqlite3.OperationalError: near ")": syntax error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\q2.py", line 205, in with_puree
+    info = u.browse(f'{num_SCP}', msg.chat.id)
+  File "C:\Users\Acer\PycharmProjects\FeDaZa_SCP_Tg_Database\utilites.py", line 99, in browse
+    cur.execute(  # Фиксирование ошибки и прикрепление ошибки к пользователю, для возможного опроса в будущем
+sqlite3.OperationalError: near ")": syntax error
