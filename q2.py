@@ -62,7 +62,7 @@ async def send_welcome(msg: types.Message):
     print(States.all())
     await state.set_state(States.all()[0])
 
-    await msg.reply(f'Привет, меня зовут ScpArchive. Приятно познакомиться, {msg.from_user.first_name}!',
+    await msg.reply(f'Здравствуйте, {msg.from_user.first_name}. Архив готов к работе.',
                     reply_markup=markup_menu)
     cur = conn.cursor()
     date_time_str = datetime.now()
@@ -82,7 +82,7 @@ async def send_welcome(msg: types.Message):
 async def send_welcome(msg: types.Message):
     state = dp.current_state(user=msg.from_user.id)
     await state.set_state(States.all()[0])
-    await msg.reply(f'Привет, {msg.from_user.first_name} я успешно перезагрузился и полностью готов к работе!',
+    await msg.reply(f'{msg.from_user.first_name}, поисковик перепущен.',
                     reply_markup=markup_menu)
 
 
@@ -91,8 +91,8 @@ async def helper(msg: types.Message):  # Создание функции help
     state = dp.current_state(user=msg.from_user.id)
     await state.set_state(States.all()[0])
     await msg.reply(
-        'Здесь вы можете найти полный архив SCP Foundation\n \n \n/browse *номер объекта* - для поиска статьи об объекте введите \n'
-        '/profile - для просмотра профиля введите \n \nПо всем вопросам обращайтесь @vardabomb')
+        'Здесь вы можете найти полный архив SCP Foundation\n \n \n Активируйте поиск scp для поиска статьи об объекте. \n'
+        'Мой профиль - для просмотра профиля \n \nПо всем вопросам обращайтесь @vardabomb')
 
 
 @dp.message_handler(commands=['change_language'], state=States.all())
@@ -209,7 +209,7 @@ async def with_puree(msg: types.Message):
         await bot.send_message(msg.chat.id, u.phrasebook['end_search'],
                                reply_markup=u.get_keyboard_search(num_SCP))
     else:
-        await msg.reply('Ты не указали номер SCP')
+        await msg.reply('Вы не указали номер SCP')
 
 
 @dp.message_handler(state=States.STATE5_NAME)  # Прием нового имени профиля и смена его в БД
