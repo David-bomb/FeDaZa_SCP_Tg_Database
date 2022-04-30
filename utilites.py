@@ -7,7 +7,10 @@ from language import languages
 
 # Файл с функциями для упрощения чтения кода
 
+phrasebook = {
+    "end_search": f"Продолжите просмотр данных? Ручной ввод активирован"
 
+}
 logging.basicConfig(
     filename='errors.log',
     format='%(asctime)s %(levelname)s %(name)s %(message)s',
@@ -85,16 +88,12 @@ def browse(argument, id):
                 print('Ищу Ошибку 5 - except')
                 retur['img'] = 'AgACAgIAAxkBAAIDd2JcUPUnu4OrqO59i9-M4FSRz3CmAALauDEbwQLoSo_J1EadLNMAAQEAAwIAA3MAAyQE'
             retur['text'] = info
-            cur = m.conn.cursor()
-            cur.execute(  # Фиксирование ошибки и прикрепление ошибки к пользователю, для возможного опроса в будущем
-                f'''UPDATE users SET number_of_requests = number_of_requests + 1 WHERE userid = {id})''')
-            m.conn.commit()
             return retur
         except Exception as e:  # Запись ошибки в лог, если пользователь столкнулся с ошибкой разряда ERROR или FATAL, возможно появление логов от самого aiogram
             logging.error(str(e))
             cur = m.conn.cursor()
             cur.execute(  # Фиксирование ошибки и прикрепление ошибки к пользователю, для возможного опроса в будущем
-                f'''UPDATE users SET number_of_bugs = number_of_bugs + 1 WHERE userid = {id}''')
+                f'''UPDATE users SET number_of_bugs = number_of_bugs + 1 WHERE userid = {id})''')
             m.conn.commit()
             retur['text'] = languages['language_error'][language]
             return retur
